@@ -16,7 +16,8 @@
 <!--      <el-main>Main</el-main>-->
 <!--      <el-footer>Footer</el-footer>-->
 <!--    </el-container>-->
-    <home v-if="activeIndex==1"></home>
+      <home v-if="activeIndex == 1"></home>
+      <news v-if="activeIndex == 5" :is-mobile="isMobile"></news>
     <my_footer></my_footer>
   </div>
 
@@ -26,6 +27,7 @@
 import home from './components/home'
 import my_header from "@/components/my_header";
 import my_footer from "@/components/my_footer";
+import news from "@/components/news";
 
 export default {
   name: 'app',
@@ -37,9 +39,10 @@ export default {
     }
   },
   components: {
-    home,
-    my_header,
-    my_footer
+      home,
+      my_header,
+      my_footer,
+      news
   },
   methods: {
     handleSelect(key, keyPath) {
