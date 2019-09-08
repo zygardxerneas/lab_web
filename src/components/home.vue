@@ -1,7 +1,7 @@
 <template>
     <div class="home">
         <div class="head_pic">
-            <el-carousel>
+            <el-carousel :height="isMobile? '': '500px'">
                 <el-carousel-item v-for="item in imgs" :key="item" style="display: inline-flex;justify-content: center;align-content: end">
 <!--                    <span class="small">{{ item }}</span>-->
                     <img :src="item.url" style="width: 100%;height: 100%"  @click="on_click_img(item.id)">

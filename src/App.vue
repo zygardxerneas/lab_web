@@ -2,12 +2,12 @@
   <div id="app">
     <my_header></my_header>
     <el-menu :default-active="activeIndex" class="el-menu" mode="horizontal" @select="handleSelect">
-      <el-menu-item index="1" :style="isMobile?'padding: 0 0.1rem': ''">HOME</el-menu-item>
-      <el-menu-item index="2" :style="isMobile?'padding: 0 0.1rem': ''">PBULICATIONS</el-menu-item>
-      <el-menu-item index="3" :style="isMobile?'padding: 0 0.1rem': ''">PROJECTS</el-menu-item>
-      <el-menu-item index="4" :style="isMobile?'padding: 0 0.1rem': ''">PEOPLE</el-menu-item>
-      <el-menu-item index="5" :style="isMobile?'padding: 0 0.1rem': ''">NEWS</el-menu-item>
-      <el-menu-item index="6" style="color: rgba(229, 28, 35, 1)" :style="isMobile?'padding: 0 0.1rem': ''">CONTACT</el-menu-item>
+      <el-menu-item index="1" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">HOME</el-menu-item>
+      <el-menu-item index="2" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">PBULICATIONS</el-menu-item>
+      <el-menu-item index="3" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">PROJECTS</el-menu-item>
+      <el-menu-item index="4" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">PEOPLE</el-menu-item>
+      <el-menu-item index="5" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">NEWS</el-menu-item>
+      <el-menu-item index="6" style="color: rgba(229, 28, 35, 1)" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">CONTACT</el-menu-item>
     </el-menu>
 <!--    <el-container>-->
 <!--      <el-header style="padding: 0;min-height:10%">-->
@@ -16,7 +16,7 @@
 <!--      <el-main>Main</el-main>-->
 <!--      <el-footer>Footer</el-footer>-->
 <!--    </el-container>-->
-    <home></home>
+    <home v-if="activeIndex==1"></home>
     <my_footer></my_footer>
   </div>
 
@@ -44,6 +44,7 @@ export default {
   methods: {
     handleSelect(key, keyPath) {
       window.console.log(key, keyPath);
+      this.activeIndex = key;
     }
   },
   mounted() {
