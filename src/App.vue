@@ -18,7 +18,7 @@
 <!--    </el-container>-->
       <home v-if="activeIndex == 1"></home>
       <news v-if="activeIndex == 5" :is-mobile="isMobile"></news>
-    <my_footer></my_footer>
+    <my_footer  v-if="wsheight && dbheight && wsheight<dbheight"></my_footer>
   </div>
 
 </template>
@@ -36,6 +36,8 @@ export default {
       activeIndex: '1',
       activeIndex2: '1',
       isMobile: false,
+      wsheight: window.screen.height,
+      dbheight: document.body.clientHeight,
     }
   },
   components: {
@@ -50,12 +52,23 @@ export default {
       this.activeIndex = key;
     }
   },
+  watch: {
+    activeIndex: function () {
+      this.$nextTick(function () {
+        this.wsheight = window.screen.height;
+        this.dbheight = document.body.scrollHeight;
+      })
+    }
+  },
   mounted() {
     let w = document.documentElement.offsetWidth || document.body.offsetWidth;
     if(w < 1000){
       this.isMobile = true;
     }
-
+    this.wsheight = window.screen.height;
+    this.dbheight = document.body.scrollHeight;
+    window.console.log(this.wsheight);
+    window.console.log(this.dbheight);
   }
 }
 </script>
