@@ -1,5 +1,5 @@
 <template>
-    <div class="news-item" v-if="newsitem">
+    <div class="news-item" v-if="newsitem" @click="goToNewsItem">
         <div class="news-img" @mouseenter="enter()" @mouseleave="leave()">
             <img :src="newsitem.img" style="">
             <div class="mask" v-if="isMask">
@@ -29,6 +29,9 @@
             },
             leave() {
                 this.isMask = false;
+            },
+            goToNewsItem(){
+                window.location.href= this.newsitem.url;
             }
         }
     }
