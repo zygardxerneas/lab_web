@@ -87,7 +87,7 @@ export default {
     }
   },
   mounted() {
-    let url = window.location.pathname;
+    let url = window.location.href;
     window.console.log(url)
     if (url.indexOf("home") != -1){
       this.activeIndex = '/home';
