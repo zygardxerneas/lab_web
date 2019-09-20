@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <my_header></my_header>
-    <el-menu :default-active="activeIndex" class="el-menu" mode="horizontal" @select="handleSelect">
-      <el-menu-item index="1" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">HOME</el-menu-item>
-      <el-menu-item index="2" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">PBULICATIONS</el-menu-item>
-      <el-menu-item index="3" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">PROJECTS</el-menu-item>
-      <el-menu-item index="4" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">PEOPLE</el-menu-item>
-      <el-menu-item index="5" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">NEWS</el-menu-item>
-      <el-menu-item index="6" style="color: rgba(229, 28, 35, 1)" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">CONTACT</el-menu-item>
+    <el-menu router :default-active="activeIndex" class="el-menu" mode="horizontal" @select="handleSelect">
+      <el-menu-item index="/home" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">HOME</el-menu-item>
+      <el-menu-item index="/publication" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">PUBLICATIONS</el-menu-item>
+      <el-menu-item index="/projects" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">PROJECTS</el-menu-item>
+      <el-menu-item index="/people" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">PEOPLE</el-menu-item>
+      <el-menu-item index="/news" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">NEWS</el-menu-item>
+      <el-menu-item index="/contact" style="color: rgba(229, 28, 35, 1)" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">CONTACT</el-menu-item>
     </el-menu>
 <!--    <el-container>-->
 <!--      <el-header style="padding: 0;min-height:10%">-->
@@ -16,8 +16,9 @@
 <!--      <el-main>Main</el-main>-->
 <!--      <el-footer>Footer</el-footer>-->
 <!--    </el-container>-->
-      <home v-if="activeIndex == 1"></home>
-      <news v-if="activeIndex == 5" :is-mobile="isMobile"></news>
+
+    <news v-if="activeIndex == '/news'" :is-mobile="isMobile"></news>
+    <home v-else></home>
     <my_footer  v-if="wsheight && dbheight && wsheight<dbheight"></my_footer>
   </div>
 
@@ -33,7 +34,7 @@ export default {
   name: 'app',
   data() {
     return {
-      activeIndex: '1',
+      activeIndex: '/home',
       activeIndex2: '1',
       isMobile: false,
       wsheight: window.screen.height,
@@ -46,29 +47,69 @@ export default {
       my_footer,
       news
   },
+  watch: {
+    activeIndex: function (newQuestion, oldQuestion) {
+      this.$nextTick(function () {
+        this.wsheight = window.screen.height;
+        this.dbheight = document.body.scrollHeight;
+      })
+      if (newQuestion == oldQuestion) return;
+      else {
+        // switch (newQuestion) {
+        //   case "1":
+        //     window.location.href = window.location.host + "/home";
+        //     break;
+        //   case "2":
+        //     window.location.href = window.location.host + "/publication";
+        //     break;
+        //   case "3":
+        //     window.location.href = window.location.host + "/projects";
+        //     break;
+        //   case "4":
+        //     window.location.href = window.location.host + "/people";
+        //     break;
+        //   case "5":
+        //     window.location.href = window.location.host + "/news";
+        //     break;
+        //   case "6":
+        //     window.location.href = window.location.host + "/contact";
+        //     break;
+        //   default:
+        //     window.location.href = window.location.host + "/home";
+        // }
+      }
+    }
+  },
   methods: {
     handleSelect(key, keyPath) {
       window.console.log(key, keyPath);
       this.activeIndex = key;
     }
   },
-  watch: {
-    activeIndex: function () {
-      this.$nextTick(function () {
-        this.wsheight = window.screen.height;
-        this.dbheight = document.body.scrollHeight;
-      })
-    }
-  },
   mounted() {
-    let w = document.documentElement.offsetWidth || document.body.offsetWidth;
-    if(w < 1000){
-      this.isMobile = true;
+    let url = window.location.pathname;
+    window.console.log(url)
+    if (url.indexOf("home") != -1){
+      this.activeIndex = '/home';
+    }else if (url.indexOf("publication") != -1){
+      this.activeIndex = '/publication';
+    }else if (url.indexOf("projects") != -1){
+      this.activeIndex = '/projects';
+    }else if (url.indexOf("people") != -1){
+      this.activeIndex = '/people';
+    }else if (url.indexOf("news") != -1){
+      this.activeIndex = '/news';
+    }else if (url.indexOf("contact") != -1){
+      this.activeIndex = '/contact';
     }
-    this.wsheight = window.screen.height;
-    this.dbheight = document.body.scrollHeight;
-    window.console.log(this.wsheight);
-    window.console.log(this.dbheight);
+    this.$nextTick(function() {
+      let w = document.documentElement.offsetWidth || document.body.offsetWidth;
+      if(w < 1000){
+        this.isMobile = true;
+      }
+      this.wsheight = window.screen.height;
+      this.dbheight = document.body.scrollHeight;
+    });
   }
 }
 </script>
