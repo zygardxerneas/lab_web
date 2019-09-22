@@ -1,5 +1,5 @@
 <template>
-    <div class="my_footer">
+    <div class="my_footer" :class="isFix? 'footer-fix': ''">
         <span @click="toTop">回到顶部</span>
     </div>
 </template>
@@ -7,10 +7,30 @@
 <script>
     export default {
         name: "my_footer",
+        props: ['isFix'],
         methods: {
             toTop: function () {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
+                // document.body.scrollTop = 0;
+                // document.documentElement.scrollTop = 0;
+                    let distance = document.documentElement.scrollTop || document.body.scrollTop;
+                    let step = distance / 50;
+                    let total = 0;
+                    if (total < distance) {
+                        let newTotal = distance - total;
+                        step = newTotal / 50;
+                        smoothUp();
+                    }
+                    function smoothUp () {
+                        if (distance > 1) {
+                            distance -= step;
+                            document.body.scrollTop = distance;
+                            document.documentElement.scrollTop = distance;
+                            setTimeout(smoothUp, 10);
+                        } else {
+                            document.body.scrollTop = 1;
+                            document.documentElement.scrollTop = 1;
+                        }
+                    }
             }
         }
     }
@@ -30,5 +50,9 @@
         align-content: center;
         padding: 0.2rem;
         cursor: pointer;
+    }
+    .footer-fix{
+        position: fixed;
+        bottom: 0;
     }
 </style>
