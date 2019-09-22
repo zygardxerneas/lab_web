@@ -18,8 +18,9 @@
 <!--    </el-container>-->
 
     <news v-if="activeIndex == '/news'" :is-mobile="isMobile"></news>
+    <publication v-else-if="activeIndex == '/publication'" :is-mobile="isMobile"></publication>
     <home v-else></home>
-    <my_footer  v-if="wsheight && dbheight && wsheight<dbheight"></my_footer>
+    <my_footer  v-if="wsheight && dbheight && wsheight<dbheight" :is-fix="(activeIndex == '/publication')"></my_footer>
   </div>
 
 </template>
@@ -29,6 +30,7 @@ import home from './components/home'
 import my_header from "@/components/my_header";
 import my_footer from "@/components/my_footer";
 import news from "@/components/news";
+import publication from "@/components/publication";
 
 export default {
   name: 'app',
@@ -45,7 +47,8 @@ export default {
       home,
       my_header,
       my_footer,
-      news
+      news,
+      publication,
   },
   watch: {
     activeIndex: function (newQuestion, oldQuestion) {
