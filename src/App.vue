@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <my_header></my_header>
-    <el-menu :default-active="activeIndex" class="el-menu" mode="horizontal" @select="handleSelect">
-      <el-menu-item index="1" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">HOME</el-menu-item>
-      <el-menu-item index="2" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">PBULICATIONS</el-menu-item>
-      <el-menu-item index="3" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">PROJECTS</el-menu-item>
-      <el-menu-item index="4" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">PEOPLE</el-menu-item>
-      <el-menu-item index="5" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">NEWS</el-menu-item>
-      <el-menu-item index="6" style="color: rgba(229, 28, 35, 1)" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">CONTACT</el-menu-item>
+    <el-menu router :default-active="activeIndex" class="el-menu" mode="horizontal" @select="handleSelect">
+      <el-menu-item index="/home" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">HOME</el-menu-item>
+      <el-menu-item index="/publication" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">PUBLICATIONS</el-menu-item>
+      <el-menu-item index="/projects" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">PROJECTS</el-menu-item>
+      <el-menu-item index="/people" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">PEOPLE</el-menu-item>
+      <el-menu-item index="/news" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">NEWS</el-menu-item>
+      <el-menu-item index="/contact" style="color: rgba(229, 28, 35, 1)" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">CONTACT</el-menu-item>
     </el-menu>
 <!--    <el-container>-->
 <!--      <el-header style="padding: 0;min-height:10%">-->
@@ -16,8 +16,11 @@
 <!--      <el-main>Main</el-main>-->
 <!--      <el-footer>Footer</el-footer>-->
 <!--    </el-container>-->
-    <home v-if="activeIndex==1"></home>
-    <my_footer></my_footer>
+
+    <news v-if="activeIndex == '/news'" :is-mobile="isMobile"></news>
+    <publication v-else-if="activeIndex == '/publication'" :is-mobile="isMobile"></publication>
+    <home v-else></home>
+    <my_footer  v-if="wsheight && dbheight && wsheight<dbheight" :is-fix="(activeIndex == '/publication')"></my_footer>
   </div>
 
 </template>
@@ -26,20 +29,59 @@
 import home from './components/home'
 import my_header from "@/components/my_header";
 import my_footer from "@/components/my_footer";
+import news from "@/components/news";
+import publication from "@/components/publication";
 
 export default {
   name: 'app',
   data() {
     return {
-      activeIndex: '1',
+      activeIndex: '/home',
       activeIndex2: '1',
       isMobile: false,
+      wsheight: window.screen.height,
+      dbheight: document.body.clientHeight,
     }
   },
   components: {
-    home,
-    my_header,
-    my_footer
+      home,
+      my_header,
+      my_footer,
+      news,
+      publication,
+  },
+  watch: {
+    activeIndex: function (newQuestion, oldQuestion) {
+      this.$nextTick(function () {
+        this.wsheight = window.screen.height;
+        this.dbheight = document.body.scrollHeight;
+      })
+      if (newQuestion == oldQuestion) return;
+      else {
+        // switch (newQuestion) {
+        //   case "1":
+        //     window.location.href = window.location.host + "/home";
+        //     break;
+        //   case "2":
+        //     window.location.href = window.location.host + "/publication";
+        //     break;
+        //   case "3":
+        //     window.location.href = window.location.host + "/projects";
+        //     break;
+        //   case "4":
+        //     window.location.href = window.location.host + "/people";
+        //     break;
+        //   case "5":
+        //     window.location.href = window.location.host + "/news";
+        //     break;
+        //   case "6":
+        //     window.location.href = window.location.host + "/contact";
+        //     break;
+        //   default:
+        //     window.location.href = window.location.host + "/home";
+        // }
+      }
+    }
   },
   methods: {
     handleSelect(key, keyPath) {
@@ -48,11 +90,29 @@ export default {
     }
   },
   mounted() {
-    let w = document.documentElement.offsetWidth || document.body.offsetWidth;
-    if(w < 1000){
-      this.isMobile = true;
+    let url = window.location.href;
+    window.console.log(url)
+    if (url.indexOf("home") != -1){
+      this.activeIndex = '/home';
+    }else if (url.indexOf("publication") != -1){
+      this.activeIndex = '/publication';
+    }else if (url.indexOf("projects") != -1){
+      this.activeIndex = '/projects';
+    }else if (url.indexOf("people") != -1){
+      this.activeIndex = '/people';
+    }else if (url.indexOf("news") != -1){
+      this.activeIndex = '/news';
+    }else if (url.indexOf("contact") != -1){
+      this.activeIndex = '/contact';
     }
-
+    this.$nextTick(function() {
+      let w = document.documentElement.offsetWidth || document.body.offsetWidth;
+      if(w < 1000){
+        this.isMobile = true;
+      }
+      this.wsheight = window.screen.height;
+      this.dbheight = document.body.scrollHeight;
+    });
   }
 }
 </script>

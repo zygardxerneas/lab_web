@@ -81,8 +81,8 @@
     .home{
         .head_pic{
             margin-top: 1rem;
-            padding-left: 15%;
-            padding-right: 15%;
+            padding-left: 10%;
+            padding-right: 10%;
             .el-carousel__item span {
                 color: #475669;
                 font-size: 14px;
@@ -102,8 +102,8 @@
         }
         .introduction{
             margin-top: 1rem;
-            padding-left: 15%;
-            padding-right: 15%;
+            padding-left: 10%;
+            padding-right: 10%;
             .title{
                 padding: 0.2rem 1rem;
                 font-size: 0.6rem;
