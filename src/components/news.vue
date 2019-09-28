@@ -2,7 +2,9 @@
     <div class="news">
         <div class="title">NEWS</div>
         <div class="news-block" :class="isMobile? 'mobile': ''">
-            <news_item v-for="item in currentNews" :newsitem="item" :key="item.title">
+            <news_item v-for="item in currentNews" :newsitem="item" :key="item.title" :style="isMobile? '': 'flex: 0 0 40%'">
+            </news_item>
+            <news_item v-for="index in (currentNews.length % 2)" :newsitem="blackNews[index]" :key="blackNews[index]" :style="isMobile? 'display: none;': 'visibility: hidden;flex: 0 0 40%'">
             </news_item>
         </div>
         <div class="page">
@@ -31,7 +33,8 @@
                 news: [],
                 currentPage: 0,
                 pageSize: 4,
-                currentNews: []
+                currentNews: [],
+                blackNews: [],
             }
         },
         watch: {
@@ -44,6 +47,7 @@
         methods: {
             handleCurrentChange(val) {
                 this.currentPage = val-1;
+                this.$emit("next-page");
             }
         },
         mounted() {
@@ -67,6 +71,7 @@
             });
             for (let i=this.currentPage*this.pageSize; i<(this.currentPage+1)*this.pageSize && i<this.news.length;i++)
                 this.currentNews.push(this.news[i]);
+            this.blackNews = this.news;
         }
     }
 </script>
@@ -84,7 +89,9 @@
         .news-block{
             margin-top: 0.5rem;
             display: flex;
+            flex-flow: row wrap;
             flex-wrap: wrap;
+            /*justify-content: space-around;*/
             justify-content: space-around;
         }
         .mobile{

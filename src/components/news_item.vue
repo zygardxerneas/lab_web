@@ -41,12 +41,12 @@
     .news-item{
         margin-top: 0.5rem;
         width: 6rem;
-        height: 7.5rem;
+        height: 8.5rem;
         box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 4px, rgba(0, 0, 0, 0.04) 0px 0px 6px;
         border-radius: 5px;
         .news-img{
             width: 100%;
-            height: 6.8rem;
+            height: 7.8rem;
             position: relative;
             img{
                 width: 100%;
