@@ -17,7 +17,7 @@
 <!--      <el-footer>Footer</el-footer>-->
 <!--    </el-container>-->
 
-    <news v-if="activeIndex == '/news'" :is-mobile="isMobile"></news>
+    <news v-if="activeIndex == '/news'" :is-mobile="isMobile"  @next-page="clickNextPage"></news>
     <publication v-else-if="activeIndex == '/publication'" :is-mobile="isMobile"></publication>
     <home v-else></home>
     <my_footer  v-if="wsheight && dbheight && wsheight<dbheight" :is-fix="(activeIndex == '/publication')"></my_footer>
@@ -87,23 +87,35 @@ export default {
     handleSelect(key, keyPath) {
       window.console.log(key, keyPath);
       this.activeIndex = key;
+    },
+    clickNextPage(){
+      this.$nextTick(function() {
+        let w = document.documentElement.offsetWidth || document.body.offsetWidth;
+        if(w < 1000){
+          this.isMobile = true;
+        }
+        this.wsheight = window.screen.height;
+        this.dbheight = document.body.scrollHeight;
+      });
     }
   },
   mounted() {
     let url = window.location.href;
-    window.console.log(url)
-    if (url.indexOf("home") != -1){
+    window.console.log(url);
+    if (url.indexOf("home") !== -1){
       this.activeIndex = '/home';
-    }else if (url.indexOf("publication") != -1){
+    }else if (url.indexOf("publication") !== -1){
       this.activeIndex = '/publication';
-    }else if (url.indexOf("projects") != -1){
+    }else if (url.indexOf("projects") !== -1){
       this.activeIndex = '/projects';
-    }else if (url.indexOf("people") != -1){
+    }else if (url.indexOf("people") !== -1){
       this.activeIndex = '/people';
-    }else if (url.indexOf("news") != -1){
+    }else if (url.indexOf("news") !== -1){
       this.activeIndex = '/news';
-    }else if (url.indexOf("contact") != -1){
+    }else if (url.indexOf("contact") !== -1){
       this.activeIndex = '/contact';
+    }else if (url.indexOf("doc") !== -1){
+      this.activeIndex = '/doc';
     }
     this.$nextTick(function() {
       let w = document.documentElement.offsetWidth || document.body.offsetWidth;
