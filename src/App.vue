@@ -17,10 +17,11 @@
 <!--      <el-footer>Footer</el-footer>-->
 <!--    </el-container>-->
 
-    <news v-if="activeIndex == '/news'" :is-mobile="isMobile"  @next-page="clickNextPage"></news>
-    <publication v-else-if="activeIndex == '/publication'" :is-mobile="isMobile"></publication>
-    <home v-else></home>
-    <my_footer  v-if="wsheight && dbheight && wsheight<dbheight" :is-fix="(activeIndex == '/publication')"></my_footer>
+      <news v-if="activeIndex == '/news'" :is-mobile="isMobile"  @next-page="clickNextPage"></news>
+      <publication v-else-if="activeIndex == '/publication'" :is-mobile="isMobile"></publication>
+      <docs v-else-if="activeIndex == '/docs'"></docs>
+      <home v-else></home>
+      <my_footer  v-if="wsheight && dbheight && wsheight<dbheight" :is-fix="(activeIndex == '/publication')"></my_footer>
   </div>
 
 </template>
@@ -31,6 +32,7 @@ import my_header from "@/components/my_header";
 import my_footer from "@/components/my_footer";
 import news from "@/components/news";
 import publication from "@/components/publication";
+import docs from "@/components/docs";
 
 export default {
   name: 'app',
@@ -49,6 +51,7 @@ export default {
       my_footer,
       news,
       publication,
+      docs,
   },
   watch: {
     activeIndex: function (newQuestion, oldQuestion) {
@@ -114,8 +117,8 @@ export default {
       this.activeIndex = '/news';
     }else if (url.indexOf("contact") !== -1){
       this.activeIndex = '/contact';
-    }else if (url.indexOf("doc") !== -1){
-      this.activeIndex = '/doc';
+    }else if (url.indexOf("docs") !== -1){
+      this.activeIndex = '/docs';
     }
     this.$nextTick(function() {
       let w = document.documentElement.offsetWidth || document.body.offsetWidth;
