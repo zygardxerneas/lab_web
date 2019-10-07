@@ -7,7 +7,7 @@
       <el-menu-item index="3" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">PROJECTS</el-menu-item>
       <el-menu-item index="4" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">PEOPLE</el-menu-item>
       <el-menu-item index="5" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">NEWS</el-menu-item>
-      <el-menu-item index="6" style="color: rgba(229, 28, 35, 1)" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">CONTACT</el-menu-item>
+      <el-menu-item index="6" style="color: rgb(229,0,0)" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">CONTACT</el-menu-item>
     </el-menu>
 <!--    <el-container>-->
 <!--      <el-header style="padding: 0;min-height:10%">-->
@@ -17,6 +17,7 @@
 <!--      <el-footer>Footer</el-footer>-->
 <!--    </el-container>-->
     <home v-if="activeIndex==1"></home>
+    <publication v-if="activeIndex==2"></publication>
     <my_footer></my_footer>
   </div>
 
@@ -24,6 +25,7 @@
 
 <script>
 import home from './components/home'
+import publication from "./components/publication";
 import my_header from "@/components/my_header";
 import my_footer from "@/components/my_footer";
 
@@ -38,6 +40,7 @@ export default {
   },
   components: {
     home,
+    publication,
     my_header,
     my_footer
   },
