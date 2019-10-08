@@ -1,5 +1,6 @@
 <template>
     <div class="publications">
+        <el-backtop></el-backtop>
         <div class="introduction">
             <div class="title"><strong>PUBLICATIONS</strong></div>
         </div>
