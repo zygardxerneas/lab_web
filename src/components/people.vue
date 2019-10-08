@@ -96,11 +96,10 @@ export default {
 
 <style scoped lang="less">
     .people{
-        padding-left: 10%;
-        padding-right: 10%;
+        padding: 0 10%;
+        margin-top: 1rem;
         .title{
-            padding-left: 10%;
-            padding-right: 10%;
+            padding: 0.2rem 1rem;
             font-size: 0.6rem;
             text-align: center;
             background-color: rgb(81, 47, 242);

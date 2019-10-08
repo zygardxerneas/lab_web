@@ -1,6 +1,6 @@
 <template>
     <div class="my_footer" :class="footer-fix">
-        <span @click="toTop">版权所有@ 东南大学智慧物联网中心(2019)</span>
+        <span >版权所有@ 东南大学智慧物联网中心(2019)</span>
     </div>
 </template>
 
@@ -49,7 +49,7 @@
         justify-content: center;
         align-content: center;
         padding: 0.2rem;
-        cursor: pointer;
+        // cursor: pointer;
     }
     .footer-fix{
         position: fixed;
