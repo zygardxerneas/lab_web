@@ -1,5 +1,6 @@
 <template>
     <div class="home">
+        <el-backtop ></el-backtop>
         <div class="head_pic">
             <el-carousel :height="isMobile? '': '500px'">
                 <el-carousel-item v-for="item in imgs" :key="item" style="display: inline-flex;justify-content: center;align-content: end">

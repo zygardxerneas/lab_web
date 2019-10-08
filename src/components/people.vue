@@ -1,5 +1,6 @@
 <template>
     <div class="people">
+        <el-backtop></el-backtop>
         <div class="title" style="">PEOPLE</div>
         
             
