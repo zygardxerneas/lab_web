@@ -19,6 +19,7 @@
 
     <news v-if="activeIndex == '/news'" :is-mobile="isMobile"></news>
     <publication v-else-if="activeIndex == '/publication'" :is-mobile="isMobile"></publication>
+    <projects v-else-if="activeIndex == '/projects'" :is-mobile="isMobile"></projects> 
     <home v-else></home>
     <my_footer  v-if="wsheight && dbheight && wsheight<dbheight" :is-fix="(activeIndex == '/publication')"></my_footer>
   </div>
@@ -31,7 +32,7 @@ import my_header from "@/components/my_header";
 import my_footer from "@/components/my_footer";
 import news from "@/components/news";
 import publication from "@/components/publication";
-
+import projects from "@/components/projects";
 export default {
   name: 'app',
   data() {
