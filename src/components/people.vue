@@ -15,18 +15,32 @@
             <el-col span ="3">
             <el-menu-item class="select-item" index="link"><a href="www.baidu.com" target="_blank">Future </a></el-menu-item>
             </el-col>
-             </el-row>
+            </el-row>
         </el-menu>
 
-        <div class="faculty"> 
-            <div class="faculty-item">
+        <div class="faculty" v-if="activeIndex=='faculty'" > 
+        <div v-for="(item, index) in faculty" v-bind:item="item" v-bind:index="index" v-bind:key="item.col">
                 <el-row>
-                    <el-col span ="11"></el-col>
-                    <el-col span ="11" offset="1"></el-col>
+                    <el-col span ="11">
+                        <el-row>
+                        <el-col span="9">
+                        <img src="../assets/sunkai.jpg" alt="some_text" height="100rem"/>
+                        </el-col>
+                        <el-col span="14" offset="1" class="item">{{item.data[0].desc}}</el-col>
+                        </el-row>
+                    </el-col>``
+                    <el-col span ="11" offset="1">
+                        <el-row>
+                        <el-col span="9">
+                        <img src="../assets/sunkai.jpg" alt="some_text"/>
+                        </el-col>
+                         <el-col span="14" offset="1" class="item">{{item.data[1].desc}}</el-col>
+                        </el-row>
+                    </el-col>
                 </el-row>
+                </div>
             </div>
-        </div>
-    </div>
+            </div>
 </template>
 
 <script>
@@ -34,28 +48,47 @@ export default {
     name: "people",
     props:["isMobile"],
     data(){
-        return[
-            {
-                name:"1",
-                photo:"",
-                desc:"是个好人"
-            },
+        return{
+            faculty:[],
+            activeIndex:"faculty"
+            }
+    },
+    methods: {
+        handleSelect(key, keyPath) {
+            window.console.log(key, keyPath);
+            this.activeIndex = key;
+    }
+    },
+    mounted(){
+        this.faculty= [
+                    {
+                        col:1,
+                        data:[{
+                            id:1,
+                            name:"1",
+                            photo:"",
+                            desc:"是个好人"
+                        },
                         {
-                name:"2",
-                photo:"",
-                desc:"是个好人"
-            },
+                            id:2,
+                            name:"2",
+                            photo:"",
+                            desc:"是个好人"
+                        }]},
+                    {   col:2,
+                        data:[{
+                        id:3,
+                            name:"3",
+                            photo:"",
+                            desc:"是个好人"
+                        },
                         {
-                name:"3",
-                photo:"",
-                desc:"是个好人"
-            },
-                        {
-                name:"4",
-                photo:"",
-                desc:"是个好人"
-            },
-        ]
+                            id:4,
+                            name:"4",
+                            photo:"",
+                            desc:"是个好人"
+                        }]},
+                ]
     }
 }
 </script>
@@ -85,6 +118,13 @@ export default {
             height: .1rem;
             border: 0.2rem; 
             border-color: aqua;
+            .item{
+                border: 0.1rem;
+                border-color: aqua;
+                height: 100%;
+                width: 100%;
+            }
         }
     }
+
 </style>
