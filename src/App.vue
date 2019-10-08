@@ -21,7 +21,7 @@
     <projects v-else-if="activeIndex == '/projects'" :is-mobile="isMobile"></projects> 
     <people v-else-if="activeIndex == '/people'" :is-mobile="isMobile"> </people>
     <home v-else></home>
-    <my_footer  v-if="wsheight && dbheight && wsheight<dbheight" :is-fix="(activeIndex == '/publication')"></my_footer>
+    <my_footer  ></my_footer>
   </div>
 
 </template>

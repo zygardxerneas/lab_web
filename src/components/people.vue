@@ -18,23 +18,83 @@
             </el-row>
         </el-menu>
 
-        <div class="faculty" v-if="activeIndex=='faculty'" > 
-        <div v-for="(item, index) in faculty" v-bind:item="item" v-bind:index="index" v-bind:key="item.col">
+        <div class="list" v-if="activeIndex=='faculty'" > 
+        <div v-for="(item) in faculty" v-bind:key="item.col">
                 <el-row>
-                    <el-col span ="11">
+                    <el-col span ="11" class="item">
                         <el-row>
-                        <el-col span="9">
-                        <img src="../assets/sunkai.jpg" alt="some_text" height="100rem"/>
+                        <el-col span="10">
+                        <div>
+                        <img :src="item.data[0].photo" alt="picture missed" class="item-pic"/>
+                        </div>
                         </el-col>
-                        <el-col span="14" offset="1" class="item">{{item.data[0].desc}}</el-col>
+                        <el-col span="14" offset="0" class="item-desc">
+                            <el-card style="height:4.5rem">
+                                 <div slot="header" >
+                                    <b style="font-size:0.5rem">{{item.data[0].name}}</b>
+                                </div>
+                               
+                                {{item.data[0].desc}}
+                            </el-card>
+                            </el-col>
                         </el-row>
                     </el-col>``
-                    <el-col span ="11" offset="1">
+                    <el-col span ="11" offset="1" class="item">
                         <el-row>
-                        <el-col span="9">
-                        <img src="../assets/sunkai.jpg" alt="some_text"/>
+                        <el-col span="10">
+                          <el-carddiv>
+                        <img :src="item.data[1].photo" alt="picture missed" class="item-pic"/>
+                        </el-carddiv>
                         </el-col>
-                         <el-col span="14" offset="1" class="item">{{item.data[1].desc}}</el-col>
+                         <el-col span="14" offset="0" class="item-desc">
+                             <el-card style="height:4.5rem">
+                                <div slot="header" >
+                                    <b style="font-size:0.5rem">{{item.data[1].name}}</b>
+                                </div>
+                                {{item.data[1].desc}}
+                            </el-card>
+                             </el-col>
+                        </el-row>
+                    </el-col>
+                </el-row>
+                </div>
+            </div>
+        <div class="list" v-if="activeIndex=='student'" > 
+        <div v-for="(item) in student" v-bind:key="item.col">
+                <el-row>
+                    <el-col span ="11" class="item">
+                        <el-row>
+                        <el-col span="10">
+                        <div>
+                        <img :src="item.data[0].photo" alt="picture missed" class="item-pic"/>
+                        </div>
+                        </el-col>
+                        <el-col span="14" offset="0" class="item-desc">
+                            <el-card style="height:4.5rem">
+                                 <div slot="header" >
+                                    <b style="font-size:0.5rem">{{item.data[0].name}}</b>
+                                </div>
+                               
+                                {{item.data[0].desc}}
+                            </el-card>
+                            </el-col>
+                        </el-row>
+                    </el-col>``
+                    <el-col span ="11" offset="1" class="item">
+                        <el-row>
+                        <el-col span="10">
+                          <el-carddiv>
+                        <img :src="item.data[1].photo" alt="picture missed" class="item-pic"/>
+                        </el-carddiv>
+                        </el-col>
+                         <el-col span="14" offset="0" class="item-desc">
+                             <el-card style="height:4.5rem">
+                                <div slot="header" >
+                                    <b style="font-size:0.5rem">{{item.data[1].name}}</b>
+                                </div>
+                                {{item.data[1].desc}}
+                            </el-card>
+                             </el-col>
                         </el-row>
                     </el-col>
                 </el-row>
@@ -50,6 +110,7 @@ export default {
     data(){
         return{
             faculty:[],
+            student:[],
             activeIndex:"faculty"
             }
     },
@@ -65,28 +126,67 @@ export default {
                         col:1,
                         data:[{
                             id:1,
-                            name:"1",
-                            photo:"",
-                            desc:"是个好人"
+                            name:"大佬一号",
+                            photo:require("../assets/sunkai.jpg"),
+                            desc: "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
+                        "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" 
                         },
                         {
                             id:2,
-                            name:"2",
-                            photo:"",
-                            desc:"是个好人"
+                            name:"大佬二号",
+                            photo:require("../assets/sunkai.jpg"),
+                            desc: "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
+                        "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" 
                         }]},
                     {   col:2,
                         data:[{
                         id:3,
-                            name:"3",
-                            photo:"",
-                            desc:"是个好人"
+                            name:"大佬三号",
+                            photo:require("../assets/sunkai.jpg"),
+                            desc: "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
+                        "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" 
                         },
                         {
                             id:4,
-                            name:"4",
-                            photo:"",
-                            desc:"是个好人"
+                            name:"大佬四号",
+                            photo:require("../assets/sunkai.jpg"),
+                            desc: "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
+                        "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" 
+                       
+                        }]},
+                ]
+        this.student=[
+                    {
+                        col:1,
+                        data:[{
+                            id:1,
+                            name:"学生一号",
+                            photo:require("../assets/sunkai.jpg"),
+                            desc: "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
+                        "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" 
+                        },
+                        {
+                            id:2,
+                            name:"学生二号",
+                            photo:require("../assets/sunkai.jpg"),
+                            desc: "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
+                        "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" 
+                        }]},
+                    {   col:2,
+                        data:[{
+                        id:3,
+                            name:"学生三号",
+                            photo:require("../assets/sunkai.jpg"),
+                            desc: "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
+                        "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" 
+                        },
+                        {
+                            id:4,
+                            name:"学生四号",
+                            photo:require("../assets/sunkai.jpg"),
+                            desc: "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
+                        "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" 
+                       
                         }]},
                 ]
     }
@@ -112,17 +212,24 @@ export default {
                 font-size: 0.4rem;
             }
         }
-        .faculty{
-            padding-left:5%; 
+        .list{
+            padding-left:0%; 
             height: .1rem;
             border: 0.2rem; 
             border-color: aqua;
             .item{
-                border: 0.1rem;
+                padding-bottom:5%; 
+                border: 0.5rem;
                 border-color: aqua;
-                height: 100%;
-                width: 100%;
+                .item-desc{
+                    // margin-left: 0.2rem;
+                    text-align: justify;
+                }
+                .item-pic{
+                    height:4.5rem;
+                }
             }
+
         }
     }
 
