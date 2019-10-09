@@ -2,8 +2,8 @@
   <div id="app">
     <my_header></my_header>
     <el-menu router :default-active="activeIndex" class="el-menu" mode="horizontal" @select="handleSelect">
-      <el-menu-item index="/home" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">HOME</el-menu-item>
-      <el-menu-item index="/publication" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">PUBLICATIONS</el-menu-item>
+      <el-menu-item index="/home" :style="isMobile?'padding: 0 0.1rem; fontsize: 4rem': 'font-size: 0.4rem'">HOME</el-menu-item>
+      <el-menu-item index="/publication" :style="isMobile?'padding: 0 0.1rem ': 'font-size: 0.4rem'">PUBLICATIONS</el-menu-item>
       <el-menu-item index="/projects" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">PROJECTS</el-menu-item>
       <el-menu-item index="/people" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">PEOPLE</el-menu-item>
       <el-menu-item index="/news" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">NEWS</el-menu-item>
@@ -21,7 +21,7 @@
     <projects v-else-if="activeIndex == '/projects'" :is-mobile="isMobile"></projects> 
     <people v-else-if="activeIndex == '/people'" :is-mobile="isMobile"> </people>
     <home v-else></home>
-    <my_footer  ></my_footer>
+    <my_footer  v-if="wsheight && dbheight && wsheight<dbheight" :is-fix="(activeIndex == '/publication')" ></my_footer>
   </div>
 
 </template>
