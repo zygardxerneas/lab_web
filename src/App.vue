@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <my_header></my_header>
+    <vueToTop type=4 duration=10 color="#BA55D3" size=36 right=50 bottom=50></vueToTop>
     <el-menu router :default-active="activeIndex" class="el-menu" mode="horizontal" @select="handleSelect">
       <el-menu-item index="/home" :style="isMobile?'padding: 0 0.1rem; fontsize: 4rem': 'font-size: 0.4rem'">HOME</el-menu-item>
       <el-menu-item index="/publication" :style="isMobile?'padding: 0 0.1rem ': 'font-size: 0.4rem'">PUBLICATIONS</el-menu-item>
@@ -34,6 +35,8 @@ import news from "@/components/news";
 import publication from "@/components/publication";
 import projects from "@/components/projects";
 import people from "@/components/people";
+import vueToTop from "vue-totop"
+// vue.use(vueToTop);
 export default {
   name: 'app',
   data() {
@@ -52,7 +55,8 @@ export default {
       news,
       publication,
       people,
-      projects
+      projects,
+      vueToTop
   },
   watch: {
     activeIndex: function (newQuestion, oldQuestion) {

@@ -1,6 +1,6 @@
 <template>
   <div class="people">
-    <el-backtop></el-backtop>
+    <!-- <el-backtop></el-backtop> -->
     <div class="title" style>PEOPLE</div>
 
     <el-menu :default-active="activeIndex" class="select" mode="horizontal" @select="handleSelect">
@@ -29,11 +29,11 @@
                   <img :src="item.data[0].photo" alt="picture missed" class="item-pic" />
                 </el-col>
                 <el-col span="14" offset="0" class="item-desc">
-                  <el-card style="height:4.5rem" >
+                  <el-card style="height:4.5rem">
                     <div slot="header">
-                      <b style="font-size:0.5rem">{{item.data[0].name}}</b> 
+                      <b style="font-size:19px">{{item.data[0].name}}</b>
                     </div>
-                    {{item.data[0].desc}}
+                    <div v-html="item.data[0].desc"></div>
                   </el-card>
                 </el-col>
               </el-row>
@@ -46,11 +46,11 @@
                   <img :src="item.data[1].photo" alt="picture missed" class="item-pic" />
                 </el-col>
                 <el-col span="14" offset="0" class="item-desc">
-                  <el-card style="height:4.5rem" >
+                  <el-card style="height:4.5rem">
                     <div slot="header">
-                      <b style="font-size:0.5rem">{{item.data[1].name}}</b>
+                      <b style="font-size:19px">{{item.data[1].name}}</b>
                     </div>
-                    {{item.data[1].desc}}
+                    <div v-html="item.data[1].desc"></div>
                   </el-card>
                 </el-col>
               </el-row>
@@ -63,17 +63,17 @@
       <div v-for="(item) in student" v-bind:key="item.col">
         <el-row>
           <el-col span="11" class="item">
-            <el-card shadow="hover" >
+            <el-card shadow="hover">
               <el-row>
                 <el-col span="10">
                   <img :src="item.data[0].photo" alt="picture missed" class="item-pic" />
                 </el-col>
                 <el-col span="14" offset="0" class="item-desc">
-                  <el-card style="height:4.5rem" >
+                  <el-card style="height:4.5rem">
                     <div slot="header">
-                      <b style="font-size:0.5rem">{{item.data[0].name}}</b>
+                      <b style="font-size:19px">{{item.data[0].name}}</b>
                     </div>
-                    {{item.data[0].desc}}
+                    <div v-html="item.data[0].desc"></div>
                   </el-card>
                 </el-col>
               </el-row>
@@ -86,11 +86,11 @@
                   <img :src="item.data[1].photo" alt="picture missed" class="item-pic" />
                 </el-col>
                 <el-col span="14" offset="0" class="item-desc">
-                  <el-card style="height:4.5rem" >
+                  <el-card style="height:4.5rem">
                     <div slot="header">
-                      <b style="font-size:0.5rem">{{item.data[1].name}}</b>
+                      <b style="font-size:19px">{{item.data[1].name}}</b>
                     </div>
-                    {{item.data[1].desc}}
+                    <div v-html="item.data[1].desc"></div>
                   </el-card>
                 </el-col>
               </el-row>
@@ -126,21 +126,19 @@ export default {
         data: [
           {
             id: 1,
-            name: "大佬一号",
-            photo: require("../assets/sunkai.jpg"),
-            url:"www.baidu.com",
+            name: "PROF.TIAN HE",
+            photo: require("../assets/tian.jpg"),
+            url: "http://www-users.cs.umn.edu/~tianhe/index.html",
             desc:
-              "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
-              "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介"
+              "Group Advisor,<br/>Principal Investigator,<br/>McKnight Land-Grant Professor<br/><br/><br/>Tianhe@Cs.Umn.Edu"
           },
           {
             id: 2,
-            name: "大佬二号",
-            photo: require("../assets/sunkai.jpg"),
-            url:"www.baidu.com",
+            name: "SONG MIN KIM",
+            photo: require("../assets/songmin.jpg"),
+            url: "http://www-users.cs.umn.edu/~ksong/",
             desc:
-              "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
-              "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介"
+              "Cross Technology Communication,<br/>Cyber-Physical Systems,<br/>Networked Systems<br/><br/><br/>Ksong@Cs.Umn.Edu"
           }
         ]
       },
@@ -151,7 +149,7 @@ export default {
             id: 3,
             name: "大佬三号",
             photo: require("../assets/sunkai.jpg"),
-            url:"www.baidu.com",
+            url: "www.baidu.com",
             desc:
               "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
               "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介"
@@ -160,7 +158,7 @@ export default {
             id: 4,
             name: "大佬四号",
             photo: require("../assets/sunkai.jpg"),
-            url:"www.baidu.com",
+            url: "www.baidu.com",
             desc:
               "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
               "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介"
@@ -242,10 +240,12 @@ export default {
       padding-bottom: 2%;
       .item-desc {
         // margin-left: 0.2rem;
-        text-align: justify;
+        font-size: 14px;
+        text-align: left;
       }
       .item-pic {
-        height: 4.5rem;
+        height: 243px;
+        width: 196px;
       }
     }
   }

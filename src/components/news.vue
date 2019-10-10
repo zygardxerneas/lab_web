@@ -1,6 +1,6 @@
 <template>
     <div class="news">
-        <el-backtop></el-backtop>
+        <!-- <el-backtop></el-backtop> -->
         <div class="title">NEWS</div>
         <div class="news-block" :class="isMobile? 'mobile': ''">
             <news_item v-for="item in currentNews" :newsitem="item" :key="item.title">

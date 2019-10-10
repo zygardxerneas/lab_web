@@ -16,7 +16,6 @@ Vue.use(Timeline);
 var vueSmoothScroll = require('vue-smoothscroll');
 Vue.use(vueSmoothScroll);
 
-
 Vue.config.productionTip = false;
 
 const routes = [
