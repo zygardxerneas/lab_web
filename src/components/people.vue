@@ -90,7 +90,7 @@
                     <div slot="header">
                       <b style="font-size:19px">{{item.data[1].name}}</b>
                     </div>
-                    <div v-html="item.data[1].desc"></div>
+                    <div  v-html="item.data[1].desc"></div>
                   </el-card>
                 </el-col>
               </el-row>
@@ -130,38 +130,15 @@ export default {
             photo: require("../assets/tian.jpg"),
             url: "http://www-users.cs.umn.edu/~tianhe/index.html",
             desc:
-              "Group Advisor,<br/>Principal Investigator,<br/>McKnight Land-Grant Professor<br/><br/><br/>Tianhe@Cs.Umn.Edu"
+              "Group Advisor,<br/>Principal Investigator,<br/>McKnight Land-Grant Professor<br/><br/><br/>Tianhe@Cs.Umn.Edu "
           },
           {
             id: 2,
-            name: "SONG MIN KIM",
-            photo: require("../assets/songmin.jpg"),
+            name: "SHUAI WANG",
+            photo: require("../assets/wangshuai.jpg"),
             url: "http://www-users.cs.umn.edu/~ksong/",
             desc:
-              "Cross Technology Communication,<br/>Cyber-Physical Systems,<br/>Networked Systems<br/><br/><br/>Ksong@Cs.Umn.Edu"
-          }
-        ]
-      },
-      {
-        col: 2,
-        data: [
-          {
-            id: 3,
-            name: "大佬三号",
-            photo: require("../assets/sunkai.jpg"),
-            url: "www.baidu.com",
-            desc:
-              "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
-              "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介"
-          },
-          {
-            id: 4,
-            name: "大佬四号",
-            photo: require("../assets/sunkai.jpg"),
-            url: "www.baidu.com",
-            desc:
-              "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
-              "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介"
+              "Cyber Physical Systems,<br/>Data Analytics,<br/>Wireless Networks And Sensors,<br/>Network Coding<br/><br/><br/>Shuaiw@Cs.Umn.Edu"
           }
         ]
       }
