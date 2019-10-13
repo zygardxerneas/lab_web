@@ -9,7 +9,7 @@
           style="display: inline-flex;justify-content: center;align-content: end"
         >
           <!--                    <span class="small">{{ item }}</span>-->
-          <img :src="item.url" style="width: 100%;height: 100%" @click="on_click_img(item.id)" />
+          <img :src="item.url" style="width: 90%;height: 100%" @click="on_click_img(item.id)" />
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -62,12 +62,10 @@ export default {
       this.isMobile = true;
     }
     for (let i = 0; i < 3; i++) {
-      this.imgs.push({ url: require("../assets/logo.png"), id: i });
+      this.imgs.push({ url: require("../assets/umn.jpg"), id: i });
     }
     this.introduction_text =
-      "这是一段很长的简介这是一段很长的简介这是一段很长的简介这是一段很长的简介这是一段很长的简介这是一段很长的简介这是一段很长的简介这是一段很长的简介\n" +
-      "这是一段很长的简介这是一段很长的简介这是一段很长的简介这是一段很长的简介这是一段很长的简介这是一段很长的简介这是一段很长的简介这是一段很长的简介\n" +
-      "这是一段很长的简介这是一段很长的简介这是一段很长的简介这是一段很长的简介这是一段很长的简介这是一段很长的简介这是一段很长的简介这是一段很长的简介。";
+      "东南大学智慧物联网中心,实验室研究方向包括：物联网，大数据分析，无线网络，移动通信技术；实验室地点：金智楼305、307,实验室成员情况：何田教授，王帅教授，博士生两名，硕士生六名，本科生十名；\n何田教授简介： ACM/IEEE Fellow, 国家千人，在顶级期刊和著名国际会议上发表300余篇文章（Google Scholar 被引用次数超过 22,000 次 H-Index 65）。现任包括ACM/IEEE TON，IEEE TC, ACM TOSN在内的七个国际期刊的编委，获八项国际会议的最佳论文奖（包括业界顶会MobiCom，SenSys和ICDCS）。\n王帅教授简介：在国内外期刊IEEE/ACM TON、TPDS、TOC、TOSN、TWC和会议MobiCom、WWW、UbiComp、INFOCOM、SenSys、ICNP、BIGDATA发表论文二十余篇。欢迎对物联网以及大数据方向感兴趣的大二大三同学积极报名加入实验室、参与到实验室相关科研项目中来。";
     this.news = [
       {
         title: "第一条新闻",

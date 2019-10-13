@@ -75,7 +75,7 @@
 <style scoped lang="less">
     .news{
         padding: 0 10%;
-        margin-top: 1rem;
+        margin-top: 0.1rem;
         .title{
             padding: 0.2rem 1rem;
             font-size: 0.6rem;

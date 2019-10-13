@@ -88,8 +88,72 @@
                         title: "Concurrent Transmission Aware Routing in Wireless Networks",
                         author: ["Shuai Wang", "S. Kim", "L. Kong", "Tian He"]
                     }],
-                }],
+                },
+                {
+                    year:2017,
+                    papers:[{
+                        source: "Wireless Power Transfer Algorithms and Applications in Ad hoc Communication Networks, Springer Inc,2017",
+                        title: "Radiation Constrained Charging Utility Optimization for Human Safety",
+                        author: ["Haipeng Dai", "Guihai Chen", "Yunhuai Liu", "Tian He"]
+                    },
+                    {
+                        source: "INFOCOM 2017",
+                        title: "C-Morse: Cross-Technology Communication with Transparent Morse Coding",
+                        author: ["Tian He", "Zhimeng Yin", "Wenchao Jiang", "Song Min Kim"]
+                    },
+                    {
+                        source: "ICDCS 2017",
+                        title: "Task-aware TCP in Data Center Networks",
+                        author: ["Tian He", "Jiawei Huang", "Jianxin Wang", "Tian He"]
+                    },
+                    {
+                        source: "ICDCS 2017",
+                        title: "Flow-Aware Adaptive Pacing to Mitigate TCP Incast in Data center Networks",
+                        author: ["Shaojun Zou", "Jiawei Huang", "Zhimeng Yin", "Jianxin Wang"]
+                    },
+
+                    {
+                        source: "IOTDI 2017",
+                        title: "ATHOME: Automatic Tunable Wireless Charging for Smart Home",
+                        author: ["Zheng Dong", "Yu Gu", "Lingkun Fu", "Jiming Chen","Tian He","Cong Liu"]
+                    },
+                    {
+                        source: "2017 ACM/IEEE 8th International Conference on Cyber-Physical Systems",
+                        title: "Battery State-of-Health Estimation for Mobile Devices",
+                        author: ["Liang He", "Eugene Kim", "Kang Shin", "Guozhu Meng","Tian He"]
+                    }
+                    ]
+                },
+                {
+                    year:2016,
+                    papers:[{
+                        source: "IEEE Transactions on Wireless Communications, 2016",
+                        title: " A Unified Metric for Correlated Diversity in Wireless Networks",
+                        author: ["S. Wang", "S. M. Kim", " G. Tan", "Y. Liu","T. He."]
+                    },
+                    {
+                        source: "ACM Transactions on Cyber-Physical Systems, 2016",
+                        title: "Last-Mile Transit Service with Urban Infrastructure Data",
+                        author: ["Desheng Zhang", "Juanjuan Zhao", "Fan Zhang", "Ruobing Jiang","Tian He","Papanikolopouls Nikos"]
+                    },
+                    {
+                        source: "ACM Transactions on Sensor Networks,2016",
+                        title: "ATPC: Adaptive Transmission Power Control for Wireless Sensor Networks",
+                        author: ["Fei Miao", "Jingbin Zhang", "Gang Zhou", "Lin Gu","Tian He","John A. Stankovic","Sang Son","George J. Pappas"]
+                    }
+                    ]
+                },
+                {
+                    year:2015,
+                    papers:[{
+                        source: "ICNP'18, Cambridge, UK, 2018",
+                        title: " Networking Support For Physical-Layer Cross-Technology Communication",
+                        author: ["Desheng Zhang", "Juanjuan Zhao", "Fan Zhang", "Tian He","Papanikolopouls Nikos"]
+                    }]
+                },
+                ],
                 labPeople: ["Shuai Wang", "Tian He"]
+
             }
         },
         methods: {
@@ -111,9 +175,9 @@
         padding-left: 10%;
         padding-right: 10%;
         .introduction {
-            margin-top: 2rem;
+            margin-top: 0.1rem;
             .title {
-                padding: 0.2rem 1rem;
+                padding: 0.2rem ;
                 font-size: 0.6rem;
                 background-color: rgb(81, 47, 242);
                 color: white;

@@ -127,6 +127,7 @@ export default {
 
 <style scoped lang="less">
 #app {
+  background-color: rgb(221, 248, 250);
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
