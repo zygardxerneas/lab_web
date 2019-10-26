@@ -2,7 +2,7 @@
     <div class="publications">
         <!-- <el-backtop></el-backtop> -->
         <div class="introduction">
-            <div class="title"><strong>PUBLICATIONS</strong></div>
+<!--            <div class="title"><strong>PUBLICATIONS</strong></div>-->
         </div>
         <div class="publication-papers">
             <div class="goodShow">
@@ -129,7 +129,7 @@
                     papers:[{
                         source: "IEEE Transactions on Wireless Communications, 2016",
                         title: " A Unified Metric for Correlated Diversity in Wireless Networks",
-                        author: ["S. Wang", "S. M. Kim", " G. Tan", "Y. Liu","T. He."]
+                        author: ["S. Wang", "S. M. Kim", " G. Tan", "Y. Liu","T. He"]
                     },
                     {
                         source: "ACM Transactions on Cyber-Physical Systems, 2016",
@@ -152,7 +152,7 @@
                     }]
                 },
                 ],
-                labPeople: ["Shuai Wang", "Tian He"]
+                labPeople: ["Shuai Wang", "Tian He", "S. Wang", "T. He"]
 
             }
         },
@@ -187,7 +187,7 @@
             margin-top: 1rem;
             background-color: rgb(173, 198, 247);
             text-align: left;
-            padding: 1.5rem 0.6rem;
+            padding: 0.5rem 0.6rem;
             .goodShow{
                 .year-box{
                     display: flex;

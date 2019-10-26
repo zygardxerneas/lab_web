@@ -1,9 +1,10 @@
 <template>
   <div class="people">
     <!-- <el-backtop></el-backtop> -->
-    <div class="title" style>PEOPLE</div>
+<!--    <div class="title" style>PEOPLE</div>-->
 
-    <el-menu :default-active="activeIndex" class="select" mode="horizontal" @select="handleSelect">
+    <el-menu :default-active="activeIndex" class="select" mode="horizontal"
+             @select="handleSelect" background-color="#fff" active-text-color="#ffd04b">
       <el-row>
         <el-col span="3" offset="7">
           <el-menu-item class="select-item" index="faculty">Faculty</el-menu-item>
@@ -38,7 +39,7 @@
                 </el-col>
               </el-row>
             </el-card>
-          </el-col>``
+          </el-col>
           <el-col span="11" offset="1" class="item">
             <el-card shadow="hover">
               <el-row>
@@ -126,11 +127,11 @@ export default {
         data: [
           {
             id: 1,
-            name: "PROF.TIAN HE",
+            name: "TIAN HE",
             photo: require("../assets/tian.jpg"),
             url: "http://www-users.cs.umn.edu/~tianhe/index.html",
             desc:
-              "Group Advisor,<br/>Principal Investigator,<br/>McKnight Land-Grant Professor<br/><br/><br/>Tianhe@Cs.Umn.Edu "
+              "Group Advisor,<br/>Principal Investigator,<br/>McKnight Land-Grant Professor<br/><br/><br/>tianhe@cs.umn.edu "
           },
           {
             id: 2,
@@ -138,7 +139,7 @@ export default {
             photo: require("../assets/wangshuai.jpg"),
             url: "http://www-users.cs.umn.edu/~ksong/",
             desc:
-              "Cyber Physical Systems,<br/>Data Analytics,<br/>Wireless Networks And Sensors,<br/>Network Coding<br/><br/><br/>Shuaiw@Cs.Umn.Edu"
+              "Internet of Things,<br/>Data Analytics,<br/>Wireless Networks And Sensors,<br/>Network Coding<br/><br/><br/>shuaiwang@seu.edu.cn"
           }
         ]
       }
@@ -194,7 +195,9 @@ export default {
 
 <style scoped lang="less">
 .people {
-  padding: 0 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 3%;
   .title {
     margin-top: 0.1rem;
     padding: 0.2rem 1rem;
@@ -209,15 +212,18 @@ export default {
     margin-bottom: 2%;
     .select-item {
       font-size: 0.4rem;
+      a{
+        text-decoration:none;
+      }
     }
   }
   .list {
-    padding-left: 0%;
+    padding-left: 0;
     height: 0.1rem;
     .item {
       padding-bottom: 2%;
+      width: 47.9111%;
       .item-desc {
-        // margin-left: 0.2rem;
         font-size: 14px;
         text-align: left;
       }

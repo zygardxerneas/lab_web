@@ -1,6 +1,6 @@
 <template>
-  <div class="projects" :style="isMobile? 'padding: 0.2rem 0.4rem': 'padding: 0.4rem 1rem'">
-    <div class="title" >PROJECTS</div>
+  <div class="projects">
+<!--    <div class="title" >PROJECTS</div>-->
     <div v-for="item in currentProjects" :key="item" class="projects-item">
       <el-row>
         <el-col :span="8" class="projects-aside">
@@ -12,7 +12,7 @@
         <el-col :span="10" class="projects_introduction">{{item.introduction}}</el-col>
       </el-row>
     </div>
-    <div class="block">
+    <div class="projects-item">
       <el-pagination
         layout="prev, pager, next"
         :total="this.projects.length"
@@ -63,6 +63,7 @@ export default {
   },
   methods: {
     on_click_img: function(index) {
+        // eslint-disable-next-line no-console
       console.log(index);
     },
     handleCurrentChange(val) {
@@ -91,7 +92,7 @@ export default {
 
 <style scoped lang="less">
 .projects {
-  padding: 0 10%;
+  margin-top: 1rem;
   .title{
     margin-top: 0.05rem;
     padding: 0.2rem 0.5rem;
@@ -102,7 +103,7 @@ export default {
   }
   .projects-item {
     margin: 0 auto;
-    border-bottom: 3px solid rgb(81, 47, 242);
+    border-top: 3px solid rgb(79, 139, 242);
     width: 950px;
     .projects-aside {
       text-align: left;
@@ -116,10 +117,13 @@ export default {
       text-align: justify;
       text-justify: inter-word;
       font-size: 15px;
-      width: 65%;
+      width: 66.66666666666666666%;
       float: left;
-      margin-top: 20px;
+      margin-top: 0.3rem;
       line-height: 25px;
+    }
+    .el-pagination{
+        padding-top: 0.5rem;
     }
   }
 }
