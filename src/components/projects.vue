@@ -1,18 +1,29 @@
 <template>
   <div class="projects">
 <!--    <div class="title" >PROJECTS</div>-->
-    <div v-for="item in currentProjects" :key="item" class="projects-item">
-      <el-row>
-        <el-col :span="8" class="projects-aside">
-          <div>
-            <h1>{{item.title}}</h1>
-            <img :src="item.url" class="projects-image" @click="on_click_img(item.url)" />
-          </div>
-        </el-col>
-        <el-col :span="10" class="projects_introduction">{{item.introduction}}</el-col>
-      </el-row>
+    <div v-for="item in currentProjects" :key="item" class="projects-item" :style="isMobile? 'width: 95%': ''">
+        <div v-if="isMobile">
+            <div>
+                <h1>{{item.title}}</h1>
+                <img :src="item.url" style="width: 90%;" @click="on_click_img(item.url)" />
+            </div>
+            <div style="padding: 0.5rem 0.2rem;text-align: left">
+                {{item.introduction}}
+            </div>
+        </div>
+        <div v-else>
+            <el-row>
+                <el-col :span="8" class="projects-aside">
+                    <div>
+                        <h1>{{item.title}}</h1>
+                        <img :src="item.url" class="projects-image" @click="on_click_img(item.url)" />
+                    </div>
+                </el-col>
+                <el-col :span="10" class="projects_introduction">{{item.introduction}}</el-col>
+            </el-row>
+        </div>
     </div>
-    <div class="projects-item">
+    <div class="projects-item" :style="isMobile? 'width: 90%': ''">
       <el-pagination
         layout="prev, pager, next"
         :total="this.projects.length"
@@ -28,7 +39,6 @@ export default {
   name: "projects",
   data() {
     return {
-      isMobile: false,
       projects: [
         {
           title: "Physical-Layer CTC",
@@ -61,6 +71,7 @@ export default {
       currentProjects: []
     };
   },
+  props: ["isMobile"],
   methods: {
     on_click_img: function(index) {
         // eslint-disable-next-line no-console

@@ -5,61 +5,91 @@
 
     <el-menu :default-active="activeIndex" class="select" mode="horizontal"
              @select="handleSelect" background-color="#fff" active-text-color="#ffd04b">
-      <el-row>
-        <el-col span="3" offset="7">
-          <el-menu-item class="select-item" index="faculty">Faculty</el-menu-item>
-        </el-col>
-        <el-col span="3">
-          <el-menu-item class="select-item" index="student">Student</el-menu-item>
-        </el-col>
-        <el-col span="3">
-          <el-menu-item class="select-item" index="link">
-            <a href="https://www.baidu.com" target="_blank">Future</a>
-          </el-menu-item>
-        </el-col>
-      </el-row>
+<!--      <el-row>-->
+<!--        <el-col span="3" offset="7">-->
+<!--          <el-menu-item class="select-item" index="faculty">Faculty</el-menu-item>-->
+<!--        </el-col>-->
+<!--        <el-col span="3">-->
+<!--          <el-menu-item class="select-item" index="student">Student</el-menu-item>-->
+<!--        </el-col>-->
+<!--        <el-col span="3">-->
+<!--          <el-menu-item class="select-item" index="link">-->
+<!--            <a href="https://www.baidu.com" target="_blank">Future</a>-->
+<!--          </el-menu-item>-->
+<!--        </el-col>-->
+<!--      </el-row>-->
+      <el-menu-item class="select-item" index="faculty">Faculty</el-menu-item>
+      <el-menu-item class="select-item" index="student">Student</el-menu-item>
+      <el-menu-item class="select-item" index="link">
+        <a href="https://www.baidu.com" target="_blank">Future</a>
+      </el-menu-item>
     </el-menu>
 
     <div class="list" v-if="activeIndex=='faculty'">
-      <div v-for="(item) in faculty" v-bind:key="item.col">
-        <el-row>
-          <el-col span="11" class="item">
+      <div v-if="!isMobile">
+        <div v-for="(item) in faculty" v-bind:key="item.col">
+          <el-row>
+            <el-col span="11" class="item">
+              <el-card shadow="hover">
+                <el-row>
+                  <el-col span="10">
+                    <img :src="item.data[0].photo" alt="picture missed" class="item-pic" />
+                  </el-col>
+                  <el-col span="14" offset="0" class="item-desc">
+                    <el-card style="height:4.5rem">
+                      <div slot="header">
+                        <b style="font-size:19px">{{item.data[0].name}}</b>
+                      </div>
+                      <div v-html="item.data[0].desc"></div>
+                    </el-card>
+                  </el-col>
+                </el-row>
+              </el-card>
+            </el-col>
+            <el-col span="11" offset="1" class="item">
+              <el-card shadow="hover">
+                <el-row>
+                  <el-col span="10">
+                    <img :src="item.data[1].photo" alt="picture missed" class="item-pic" />
+                  </el-col>
+                  <el-col span="14" offset="0" class="item-desc">
+                    <el-card style="height:4.5rem">
+                      <div slot="header">
+                        <b style="font-size:19px">{{item.data[1].name}}</b>
+                      </div>
+                      <div v-html="item.data[1].desc"></div>
+                    </el-card>
+                  </el-col>
+                </el-row>
+              </el-card>
+            </el-col>
+          </el-row>
+        </div>
+      </div>
+      <div v-else>
+        <div v-for="(item) in faculty[0].data" v-bind:key="item">
+          <div class="item" style="width: 100%">
             <el-card shadow="hover">
               <el-row>
                 <el-col span="10">
-                  <img :src="item.data[0].photo" alt="picture missed" class="item-pic" />
+                  <img :src="item.photo" alt="picture missed" style="width: 100%;height: 4rem" />
                 </el-col>
                 <el-col span="14" offset="0" class="item-desc">
-                  <el-card style="height:4.5rem">
-                    <div slot="header">
-                      <b style="font-size:19px">{{item.data[0].name}}</b>
+                  <el-card style="height:4rem" body-style="padding: 10px">
+                    <div>
+                      <b style="font-size:0.2rem">{{item.name}}</b>
                     </div>
-                    <div v-html="item.data[0].desc"></div>
+                    <br>
+                    <div v-html="item.desc" style="font-size: 0.1rem"></div>
                   </el-card>
                 </el-col>
               </el-row>
             </el-card>
-          </el-col>
-          <el-col span="11" offset="1" class="item">
-            <el-card shadow="hover">
-              <el-row>
-                <el-col span="10">
-                  <img :src="item.data[1].photo" alt="picture missed" class="item-pic" />
-                </el-col>
-                <el-col span="14" offset="0" class="item-desc">
-                  <el-card style="height:4.5rem">
-                    <div slot="header">
-                      <b style="font-size:19px">{{item.data[1].name}}</b>
-                    </div>
-                    <div v-html="item.data[1].desc"></div>
-                  </el-card>
-                </el-col>
-              </el-row>
-            </el-card>
-          </el-col>
-        </el-row>
+          </div>
+        </div>
       </div>
     </div>
+
     <div class="list" v-if="activeIndex=='student'">
       <div v-for="(item) in student" v-bind:key="item.col">
         <el-row>
@@ -131,7 +161,7 @@ export default {
             photo: require("../assets/people/hetian.jpg"),
             url: "http://www-users.cs.umn.edu/~tianhe/index.html",
             desc:
-              "Group Advisor,<br/>Principal Investigator,<br/>McKnight Land-Grant Professor<br/><br/><br/>tianhe@cs.umn.edu "
+              "Group Advisor,<br/>Principal Investigator,<br/>McKnight Land-Grant Professor<br/><br/>tianhe@cs.umn.edu "
           },
           {
             id: 2,
@@ -139,7 +169,7 @@ export default {
             photo: require("../assets/people/wangshuai.jpg"),
             url: "https://scholar.google.com/citations?hl=zh-CN&user=gfDfZqAAAAAJ&view_op=list_works&sortby=pubdate",
             desc:
-              "Internet of Things,<br/>Data Analytics,<br/>Wireless Networks And Sensors,<br/>Network Coding<br/><br/><br/>shuaiwang@seu.edu.cn"
+              "Internet of Things,<br/>Data Analytics,<br/>Wireless Networks And Sensors,<br/>Network Coding<br/><br/>shuaiwang@seu.edu.cn"
           }
         ]
       }
@@ -210,6 +240,8 @@ export default {
     background-color: white;
     text-align: center;
     margin-bottom: 2%;
+    display: flex;
+    justify-content: center;
     .select-item {
       font-size: 0.4rem;
       a{
@@ -228,6 +260,7 @@ export default {
         text-align: left;
       }
       .item-pic {
+        /*width: 100%;*/
         height: 243px;
         width: 196px;
       }

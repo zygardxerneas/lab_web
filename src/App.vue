@@ -61,7 +61,7 @@ export default {
       people,
       projects,
       vueToTop,
-      contact
+      contact,
   },
   watch: {
     activeIndex: function (newQuestion, oldQuestion) {
