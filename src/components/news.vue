@@ -58,17 +58,16 @@
             //         url: "https://cn.vuejs.org/v2/guide/index.html",
             //     })
             // }
-//             this.news.push({
-//                 title: "UbiComp 2019",
-//                 abstract: "The 2019 ACM International Joint Conference on Pervasive and Ubiquitous Computing (UbiComp 2019) has been held in London, UK, colocated with ISWC 2019.",
-//                 img: require("../assets/news/ubicomp_2019.jpg"),
-//                 url: "http://ubicomp.org/ubicomp2019/index.html",
-//             });
-// >>>>>>> 9e1a79a966c1f9ff2360ccb96e0fe366031b9b45
+            this.news.push({
+                title: "UbiComp 2019",
+                abstract: "The 2019 ACM International Joint Conference on Pervasive and Ubiquitous Computing (UbiComp 2019) has been held in London, UK, colocated with ISWC 2019.",
+                img: require("../assets/news/ubicomp_2019.jpg"),
+                url: "http://ubicomp.org/ubicomp2019/index.html",
+            });
+
             this.news.push({
                 title: "WWW 2019",
-                abstract: "THE WEB CONFERENCE 2019 \n 30 years of the web \n San Francisco\n" +
-                    "May 13-17, 2019",
+                abstract: "THE WEB CONFERENCE 2019, 30 years of the web, San Francisco, May 13-17, 2019",
                 img: require("../assets/news/www_2019.jpg"),
                 url: "https://www2019.thewebconf.org/",
             });

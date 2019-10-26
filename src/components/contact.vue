@@ -17,7 +17,7 @@
             }
         },
         mounted() {
-            this.imgs=require("../assets/contact.jpg");
+            this.imgs=require("../assets/contact.png");
         }
     }
 </script>
