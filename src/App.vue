@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <my_header></my_header>
-    <vueToTop type=4 duration=10 color="#BA55D3" size=36 right=50 bottom=50></vueToTop>
+    <vueToTop type=6 duration=5 color="#79B4DE" size=36 right=50 bottom=50></vueToTop>
     <el-menu router :default-active="activeIndex" class="el-menu" mode="horizontal" @select="handleSelect">
       <el-menu-item index="/home" :style="isMobile?'padding: 0 0.1rem; fontsize: 4rem': 'font-size: 0.4rem'">HOME</el-menu-item>
       <el-menu-item index="/publication" :style="isMobile?'padding: 0 0.1rem ': 'font-size: 0.4rem'">PUBLICATIONS</el-menu-item>
@@ -21,8 +21,9 @@
     <publication v-else-if="activeIndex == '/publication'" :is-mobile="isMobile"></publication>
     <projects v-else-if="activeIndex == '/projects'" :is-mobile="isMobile"></projects> 
     <people v-else-if="activeIndex == '/people'" :is-mobile="isMobile"> </people>
+    <contact v-else-if="activeIndex == '/contact'" :is-mobile="isMobile"> </contact>
     <home v-else></home>
-    <my_footer  v-if="wsheight && dbheight && wsheight<dbheight" :is-fix="(activeIndex == '/publication')" ></my_footer>
+    <my_footer  :is-fix="(activeIndex == '/publication')" v-if="!(activeIndex=='/contact')" ></my_footer>
   </div>
 
 </template>
@@ -35,6 +36,7 @@ import news from "@/components/news";
 import publication from "@/components/publication";
 import projects from "@/components/projects";
 import people from "@/components/people";
+import contact from "./components/contact";
 import vueToTop from "vue-totop"
 // vue.use(vueToTop);
 export default {
@@ -56,7 +58,8 @@ export default {
       publication,
       people,
       projects,
-      vueToTop
+      vueToTop,
+      contact
   },
   watch: {
     activeIndex: function (newQuestion, oldQuestion) {
@@ -127,7 +130,7 @@ export default {
 
 <style scoped lang="less">
 #app {
-  background-color: rgb(221, 248, 250);
+  /*background-color: rgb(221, 248, 250);*/
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
