@@ -2,13 +2,14 @@
   <div id="app">
     <my_header></my_header>
     <vueToTop type=6 duration=5 color="#79B4DE" size=36 right=50 bottom=50></vueToTop>
-    <el-menu router :default-active="activeIndex" class="el-menu" mode="horizontal" @select="handleSelect">
+    <el-menu router :default-active="activeIndex" class="el-menu" mode="horizontal" @select="handleSelect" active-text-color="#409EFF">
       <el-menu-item index="/home" :style="isMobile?'padding: 0 0.1rem; fontsize: 4rem': 'font-size: 0.4rem'">HOME</el-menu-item>
       <el-menu-item index="/publication" :style="isMobile?'padding: 0 0.1rem ': 'font-size: 0.4rem'">PUBLICATIONS</el-menu-item>
       <el-menu-item index="/projects" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">PROJECTS</el-menu-item>
       <el-menu-item index="/people" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">PEOPLE</el-menu-item>
       <el-menu-item index="/news" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">NEWS</el-menu-item>
-      <el-menu-item index="/contact" style="color: rgba(229, 28, 35, 1)" :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">CONTACT</el-menu-item>
+      <el-menu-item index="/contact" text-color="#E51C23"  active-text-color="#409EFF"  :style="isMobile?'padding: 0 0.1rem': 'font-size: 0.4rem'">CONTACT</el-menu-item>
+<!--      style="color: rgba(229, 28, 35, 1)"-->
     </el-menu>
 <!--    <el-container>-->
 <!--      <el-header style="padding: 0;min-height:10%">-->
@@ -23,7 +24,7 @@
     <people v-else-if="activeIndex == '/people'" :is-mobile="isMobile"> </people>
     <contact v-else-if="activeIndex == '/contact'" :is-mobile="isMobile"> </contact>
     <home v-else></home>
-    <my_footer  :is-fix="(activeIndex == '/publication')" v-if="!(activeIndex=='/contact')" ></my_footer>
+    <my_footer v-if="!(activeIndex=='/contact')" :is-bottom="isBottom"></my_footer>
   </div>
 
 </template>
@@ -48,6 +49,7 @@ export default {
       isMobile: false,
       wsheight: window.screen.height,
       dbheight: document.body.clientHeight,
+      isBottom: false
     }
   },
   components: {
@@ -66,6 +68,7 @@ export default {
       this.$nextTick(function () {
         this.wsheight = window.screen.height;
         this.dbheight = document.body.scrollHeight;
+        this.isbottom();
       })
       if (newQuestion == oldQuestion) return;
       else {
@@ -98,11 +101,19 @@ export default {
     handleSelect(key, keyPath) {
       window.console.log(key, keyPath);
       this.activeIndex = key;
+    },
+    isbottom() {
+      this.isBottom = false;
+      let bodyh =  document.body.scrollHeight,
+          documenth = window.screen.height;
+      if (bodyh < documenth) {
+        this.isBottom = true;
+      }
     }
   },
   mounted() {
     let url = window.location.href;
-    window.console.log(url)
+    // window.console.log(url)
     if (url.indexOf("home") != -1){
       this.activeIndex = '/home';
     }else if (url.indexOf("publication") != -1){
@@ -117,6 +128,7 @@ export default {
       this.activeIndex = '/contact';
     }
     this.$nextTick(function() {
+      this.isbottom();
       let w = document.documentElement.offsetWidth || document.body.offsetWidth;
       if(w < 1000){
         this.isMobile = true;

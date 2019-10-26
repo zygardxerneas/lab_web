@@ -14,7 +14,7 @@
         </el-col>
         <el-col span="3">
           <el-menu-item class="select-item" index="link">
-            <a href="www.baidu.com" target="_blank">Future</a>
+            <a href="https://www.baidu.com" target="_blank">Future</a>
           </el-menu-item>
         </el-col>
       </el-row>
@@ -79,7 +79,7 @@
                 </el-col>
               </el-row>
             </el-card>
-          </el-col>``
+          </el-col>
           <el-col span="11" offset="1" class="item">
             <el-card shadow="hover">
               <el-row>

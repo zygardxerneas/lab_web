@@ -4,8 +4,8 @@
     <div class="head_pic">
       <el-carousel :height="isMobile? '': '500px'">
         <el-carousel-item
-          v-for="item in imgs"
-          :key="item"
+          v-for="(item, index) in imgs"
+          :key="index"
           style="display: inline-flex;justify-content: center;align-content: end">
           <!--<span class="small">{{ item }}</span>-->
           <img :src="item.url" style="width: 100%;height: 100%; background-size:cover;" @click="on_click_img(item.id)" />
@@ -21,11 +21,15 @@
       <div class="title">实验室新闻</div>
       <div class="news" :style="isMobile? 'padding: 0.2rem 0.4rem': 'padding: 0.4rem 1rem'">
         <div v-for="item in news" :key="item" class="news-item" @click="to_news_item(item)">
-          <el-row>
-            <el-col :span="14">
-              <div class="news-item-title">{{item.title}}</div>
+          <el-row style="display: flex;align-items: center">
+            <el-col :span="16">
+              <div class="news-item-title">
+                <span v-for="(it, i) in item.title" :style="item.isChangeTitle[i]? 'color: red;font-style: italic': ''" :key="it">
+                  {{it}}
+                </span>
+              </div>
             </el-col>
-            <el-col :span="10">
+            <el-col :span="8">
               <div class="news-item-time">{{item.time}}</div>
             </el-col>
           </el-row>
@@ -66,16 +70,19 @@ export default {
     this.imgs.push({ url: require("../assets/ubicomp2019.jpg")});
     this.introduction_text =
       "东南大学智慧物联网中心,实验室研究方向包括：物联网，大数据分析，无线网络，移动通信技术；实验室地点：金智楼305、307,实验室成员情况：何田教授，王帅教授，博士生两名，硕士生六名，本科生十名；\n何田教授简介： ACM/IEEE Fellow, 国家千人，在顶级期刊和著名国际会议上发表300余篇文章（Google Scholar 被引用次数超过 22,000 次 H-Index 65）。现任包括ACM/IEEE TON，IEEE TC, ACM TOSN在内的七个国际期刊的编委，获八项国际会议的最佳论文奖（包括业界顶会MobiCom，SenSys和ICDCS）。\n王帅教授简介：在国内外期刊IEEE/ACM TON、TPDS、TOC、TOSN、TWC和会议MobiCom、WWW、UbiComp、INFOCOM、SenSys、ICNP、BIGDATA发表论文二十余篇。欢迎对物联网以及大数据方向感兴趣的大二大三同学积极报名加入实验室、参与到实验室相关科研项目中来。";
+    let url = window.location;
     this.news = [
       {
-        title: "1 paper is accepted by TMC 2019 about CTC.",
+        title: ["1 paper is accepted by ", "TMC 2019",  " about CTC."],
+        isChangeTitle: [false, true, false],
         time: "2019-08-30",
-        url: "#"
+        url: url.origin + "/news"
       },
       {
-        title: "1 paper is accepted by WWW 2019 about bike sharing systems.",
+        title: ["1 paper is accepted by ", "WWW 2019",  " about bike sharing systems."],
+        isChangeTitle: [false, true, false],
         time: "2019-05-13",
-        url: "#"
+        url: url.origin + "/news"
       }
     ];
   }
@@ -138,9 +145,9 @@ export default {
         margin-top: 0.3rem;
         cursor: pointer;
         .news-item-title {
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
+          /*white-space: nowrap;*/
+          /*overflow: hidden;*/
+          /*text-overflow: ellipsis;*/
         }
         .news-item-time {
           text-align: right;

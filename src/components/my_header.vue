@@ -32,7 +32,7 @@
         justify-content: center;
         align-content: center;
         .lab_name_text{
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             text-align: center;
             color: white;
         }

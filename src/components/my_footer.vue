@@ -1,5 +1,5 @@
 <template>
-    <div class="my_footer" :class="footer-fix">
+    <div class="my_footer" :class="isBottom? 'footer-fix' : ''">
         <span>版权所有@ 东南大学智慧物联网研究中心(2019)</span>
     </div>
 </template>
@@ -7,6 +7,7 @@
 <script>
     export default {
         name: "my_footer",
+        props: ["isBottom"],
     }
 </script>
 
@@ -27,6 +28,6 @@
     .footer-fix{
         position: fixed;
         bottom: 0;
-        font-size: medium;
+        /*font-size: medium;*/
     }
 </style>

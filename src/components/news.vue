@@ -1,7 +1,7 @@
 <template>
     <div class="news">
         <div class="news-block" :class="isMobile? 'mobile': ''">
-            <news_item v-for="item in currentNews" :newsitem="item" :key="item.title">
+            <news_item v-for="item in currentNews" :newsitem="item" :key="item.title" :style="isMobile? '': 'width: 24%'">
             </news_item>
         </div>
         <div class="page">
@@ -9,7 +9,7 @@
                     small
                     layout="prev, pager, next"
                     :page-size="pageSize"
-                    :total="5"
+                    :total="news.length"
                     @current-change="handleCurrentChange"
             >
             </el-pagination>
@@ -46,18 +46,18 @@
             }
         },
         mounted() {
-            for (let i=1;i<=4;i++) {
-                /*this.news.push({
-                    title: "这是第" + i + "条新闻",
-                    abstract: "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
-                        "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
-                        "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
-                        "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
-                        "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介",
-                    img: require("../assets/logo.png"),
-                    url: "https://cn.vuejs.org/v2/guide/index.html",
-                })*/
-            }
+            // for (let i=1;i<=4;i++) {
+            //     this.news.push({
+            //         title: "这是第" + i + "条新闻",
+            //         abstract: "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
+            //             "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
+            //             "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
+            //             "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
+            //             "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介",
+            //         img: require("../assets/logo.png"),
+            //         url: "https://cn.vuejs.org/v2/guide/index.html",
+            //     })
+            // }
             this.news.push({
                 title: "这是第" + 5 + "条新闻",
                 abstract: "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介",
@@ -98,7 +98,7 @@
         .page{
             margin-top: 0.5rem;
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             text-align: center;
         }
     }
