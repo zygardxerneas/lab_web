@@ -64,10 +64,10 @@
                 img: require("../assets/news/ubicomp_2019.jpg"),
                 url: "http://ubicomp.org/ubicomp2019/index.html",
             });
+
             this.news.push({
                 title: "WWW 2019",
-                abstract: "THE WEB CONFERENCE 2019 \n 30 years of the web \n San Francisco\n" +
-                    "May 13-17, 2019",
+                abstract: "THE WEB CONFERENCE 2019, 30 years of the web, San Francisco, May 13-17, 2019",
                 img: require("../assets/news/www_2019.jpg"),
                 url: "https://www2019.thewebconf.org/",
             });
