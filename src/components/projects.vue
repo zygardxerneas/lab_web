@@ -33,14 +33,14 @@ export default {
         {
           title: "CTC",
           introduction:
-            "The proliferation of wireless technologies has greatly benefited people's daily life. However, these wireless technologies coexist in the same or overlapping channels (e.g., ISM bands), and are heaviliy affected by the cross-technology interference (CTI), due to the incompatible PHY/MAC standards. Previous designs are mainly focused on the improvement of unicast communication, trying to improve the performance on individual wireless links from high interference. This limitation calls for the investigation of spectrum efficiency of broadcast under CTI. We will revisit the classical definition of spectrum efficiency in the context of broadcast, because the total aggregated throughput is also subjected to the number of involved receivers and their reception relationship.",
-          url: require("../assets/ctc.jpg")
+            "Recent advances in Cross-Technology Communication (CTC) have improved efficient coexistence and cooperation among heterogeneous wireless devices (e.g., WiFi, ZigBee, and Bluetooth) operating in the same ISM band. However, until now the effectiveness of existing CTCs, which rely on packet-level modulation, is limited due to their low throughput (e.g., tens of bps). Our work, named WEBee, opens a promising direction for high-throughput CTC via physical-level emulation. WEBee uses a high-speed wireless radio (e.g., WiFi OFDM) to emulate the desired signals of a low-speed radio (e.g., ZigBee). Our unique emulation technique manipulates only the payload of WiFi packets, requiring neither hardware nor firmware changes in commodity technologies -- a feature allowing zero-cost fast deployment on existing WiFi infrastructure. We designed and implemented WEBee with commodity devices (Atheros AR2425 WiFi card and MicaZ CC2420) and the USRP-N210 platform (for PHY layer evaluation).",
+          url: require("../assets/projects/webee.jpg")
         },
         {
-          title: "Smart button",
+          title: "Bike Sharing System",
           introduction:
-            "This project aims to build Smart Buttons, a bio-enabled wearable device weighing less than 2 grams. Instead of building yet-another miniaturized wearable device, a transformative architecture is created where the designconstraints (e.g., form factor, cost and energy) make it critically necessary to leverage bio-enabled functions to achieve a feasible design. Specifically, a network of smart buttons will be built that scales from a few buttons for each person individually to over a hundred of buttons for a crowd. This network simultaneously records, generates, compiles posture and interaction data spanning various scenarios, time scales and physical settings. The smart button platform will be able to assist domain scientists in understanding human posture and behavior as well as social interaction in a crowd.",
-          url: require("../assets/button.jpg")
+            "With the rapid development of sharing economy, massive sharing systems such as Uber, Airbnb, and bikeshare have percolated into people's daily life. The sharing economy, at its core, is to achieve efficient use of resources. The actual usage of shared resources, however, is unclear to us. Little measurement or analysis, if any, has been conducted to investigate the resource usage status with the large-scale data collected from these sharing systems. In this paper, we analyze the bike usage status in three typical bikeshare systems based on 140-month multi-event data. Our analysis shows that the most used 20% of bikes account for 45% of usage, while the least used 20% of bikes account for less than 1% of usage. To efficiently utilize shared bikes, we propose a usage balancing design called eShare which has three components: (i) a statistical model based on archived data to infer historical usage; (ii) an entropy-based prediction model based on both real-time and archived data to infer future usage; (iii) a model-driven optimal calibration engine for bike selection to dynamically balance usage.",
+          url: require("../assets/projects/bike_sharing_systems.jpg")
         },
         {
           title: "ITS",
@@ -52,7 +52,7 @@ export default {
           title: "Physical-Layer CTC",
           introduction:
             "Recent advances in Cross-Technology Communication (CTC) have improved efficient coexistence and cooperation among heterogeneous wireless devices (e.g., WiFi, ZigBee, and Bluetooth) operating in the same ISM band. However, until now the effectiveness of existing CTCs, which rely on packet-level modulation, is limited due to their low throughput (e.g., tens of bps). Our work, named WEBee, opens a promising direction for high-throughput CTC via physical-level emulation. WEBee uses a high-speed wireless radio (e.g., WiFi OFDM) to emulate the desired signals of a low-speed radio (e.g., ZigBee). Our unique emulation technique manipulates only the payload of WiFi packets, requiring neither hardware nor firmware changes in commodity technologies – a feature allowing zero-cost fast deployment on existing WiFi infrastructure. We designed and implemented WEBee with commodity devices (Atheros AR2425 WiFi card and MicaZ CC2420) and the USRP-N210 platform (for PHY layer evaluation). Our comprehensive evaluation reveals that WEBee can achieve a more than 99% reliable parallel CTC between WiFi and ZigBee with 126 Kbps in noisy environments, a throughput about 16,000x faster than current state-of-the-art CTCs.",
-          url: require("../assets/webee.png")
+          url: require("../assets/logo.png")
         }
 
       ],
