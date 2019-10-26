@@ -128,7 +128,7 @@ export default {
           {
             id: 1,
             name: "TIAN HE",
-            photo: require("../assets/tian.jpg"),
+            photo: require("../assets/people/hetian.jpg"),
             url: "http://www-users.cs.umn.edu/~tianhe/index.html",
             desc:
               "Group Advisor,<br/>Principal Investigator,<br/>McKnight Land-Grant Professor<br/><br/><br/>tianhe@cs.umn.edu "
@@ -136,8 +136,8 @@ export default {
           {
             id: 2,
             name: "SHUAI WANG",
-            photo: require("../assets/wangshuai.jpg"),
-            url: "http://www-users.cs.umn.edu/~ksong/",
+            photo: require("../assets/people/wangshuai.jpg"),
+            url: "https://scholar.google.com/citations?hl=zh-CN&user=gfDfZqAAAAAJ&view_op=list_works&sortby=pubdate",
             desc:
               "Internet of Things,<br/>Data Analytics,<br/>Wireless Networks And Sensors,<br/>Network Coding<br/><br/><br/>shuaiwang@seu.edu.cn"
           }

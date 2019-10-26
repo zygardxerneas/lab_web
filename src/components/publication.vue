@@ -77,16 +77,20 @@
                     year: 2018,
                     papers: [{
                         source: "ICNP'18, Cambridge, UK, 2018",
-                        title: " Networking Support For Physical-Layer Cross-Technology Communication",
+                        title: "Networking Support For Physical-Layer Cross-Technology Communication",
                         author: ["Shuai Wang", "Z. Yin", "Z. Li", "Tian He"]
+                    },{
+                        source: "IEEE Transactions on Communications, 2018",
+                        title: "Concurrent Transmission Aware Routing in Wireless Networks",
+                        author: ["Shuai Wang", "Song Min Kim", "Linghe Kong", "Tian He"]
                     },{
                         source: "Ubicomp'18, Singapore, 2018",
                         title: "BRAVO: Improving the Rebalancing Operation in Bike Sharing with Rebalancing Range Prediction",
                         author: ["Shuai Wang", "Tian He", "D. Zhang", "Y. Shu", "Y. Liu", "Y. Gu", "C. Liu", "H. Lee", "S. Son"]
                     },{
-                        source: "IEEE Transactions on Communications (TCOM), 2018",
-                        title: "Concurrent Transmission Aware Routing in Wireless Networks",
-                        author: ["Shuai Wang", "S. Kim", "L. Kong", "Tian He"]
+                        source: "IEEE 38th International Conference on Distributed Computing Systems (ICDCS), 2018",
+                        title: "Symbol-level cross-technology communication via payload encoding",
+                        author: ["Shuai Wang", "S. Kim", "Tian He"]
                     }],
                 },
                 {
@@ -95,6 +99,10 @@
                         source: "Wireless Power Transfer Algorithms and Applications in Ad hoc Communication Networks, Springer Inc,2017",
                         title: "Radiation Constrained Charging Utility Optimization for Human Safety",
                         author: ["Haipeng Dai", "Guihai Chen", "Yunhuai Liu", "Tian He"]
+                    },{
+                        source: "2017 26th International Conference on Computer Communication and Networks (ICCCN),2017",
+                        title: "Achieving spectrum efficient communication under cross-technology interference",
+                        author: ["Shuai Wang", "Zhimeng Yin", "Song Min Kim", "Tian He"]
                     },
                     {
                         source: "INFOCOM 2017",
@@ -104,12 +112,12 @@
                     {
                         source: "ICDCS 2017",
                         title: "Task-aware TCP in Data Center Networks",
-                        author: ["Tian He", "Jiawei Huang", "Jianxin Wang", "Tian He"]
+                        author: ["Sen Liu", "Jiawei Huang", "Yutao Zhou", "Jianxin Wang", "Tian He"]
                     },
                     {
                         source: "ICDCS 2017",
                         title: "Flow-Aware Adaptive Pacing to Mitigate TCP Incast in Data center Networks",
-                        author: ["Shaojun Zou", "Jiawei Huang", "Zhimeng Yin", "Jianxin Wang"]
+                        author: ["Shaojun Zou", "Jiawei Huang", "Yutao Zhou", "Jianxin Wang", "Tian He"]
                     },
 
                     {
@@ -140,15 +148,26 @@
                         source: "ACM Transactions on Sensor Networks,2016",
                         title: "ATPC: Adaptive Transmission Power Control for Wireless Sensor Networks",
                         author: ["Fei Miao", "Jingbin Zhang", "Gang Zhou", "Lin Gu","Tian He","John A. Stankovic","Sang Son","George J. Pappas"]
-                    }
-                    ]
+                    }]
                 },
                 {
                     year:2015,
                     papers:[{
-                        source: "ICNP'18, Cambridge, UK, 2018",
-                        title: " Networking Support For Physical-Layer Cross-Technology Communication",
+                        source: "IEEE Conference on Computer Communications (INFOCOM), 2015",
+                        title: "Exploiting causes and effects of wireless link correlation for better performance",
                         author: ["Desheng Zhang", "Juanjuan Zhao", "Fan Zhang", "Tian He","Papanikolopouls Nikos"]
+                    },{
+                        source: "IEEE Transactions on Wireless Communications, 2015",
+                        title: "Delay-bounded transmission power control for low-duty-cycle sensor networks",
+                        author: ["Zuzhi Fan", "Shi Bai", "Shuai Wang", "Tian He"]
+                    },{
+                        source: "IEEE International Conference on Big Data (Big Data), 2015",
+                        title: "EveryoneCounts: Data-driven digital advertising with uncertain demand model in metro networks",
+                        author: ["Desheng Zhang", "Riiobing Jiang", "Shuai Wang", "Yanmin Zhu", "Bo Yang", "Jian Cao", "Fan Zhang", "Tian He"]
+                    },{
+                        source: "Proceedings of the 13th ACM Conference on Embedded Networked Sensor Systems, 2015",
+                        title: "cetx: Incorporating spatiotemporal correlation for better wireless networking",
+                        author: ["Song Min Kim", "Shuai Wang", "Tian He"]
                     }]
                 },
                 ],
