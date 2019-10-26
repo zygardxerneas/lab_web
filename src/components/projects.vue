@@ -31,7 +31,7 @@ export default {
       isMobile: false,
       projects: [
         {
-          title: "CTC",
+          title: "Physical-Layer CTC",
           introduction:
             "Recent advances in Cross-Technology Communication (CTC) have improved efficient coexistence and cooperation among heterogeneous wireless devices (e.g., WiFi, ZigBee, and Bluetooth) operating in the same ISM band. However, until now the effectiveness of existing CTCs, which rely on packet-level modulation, is limited due to their low throughput (e.g., tens of bps). Our work, named WEBee, opens a promising direction for high-throughput CTC via physical-level emulation. WEBee uses a high-speed wireless radio (e.g., WiFi OFDM) to emulate the desired signals of a low-speed radio (e.g., ZigBee). Our unique emulation technique manipulates only the payload of WiFi packets, requiring neither hardware nor firmware changes in commodity technologies -- a feature allowing zero-cost fast deployment on existing WiFi infrastructure. We designed and implemented WEBee with commodity devices (Atheros AR2425 WiFi card and MicaZ CC2420) and the USRP-N210 platform (for PHY layer evaluation).",
           url: require("../assets/projects/webee.jpg")
@@ -43,16 +43,16 @@ export default {
           url: require("../assets/projects/bike_sharing_systems.jpg")
         },
         {
-          title: "ITS",
+          title: "Packet-Level CTC",
           introduction:
-            "The traditional design of urban transit services has been based on limited sampling data collected through surveys and censuses, which are often dated and incomplete. The theory and practice of transit services have also typically focused on isolated individual transportation modes. These two limitations result in unsatisfactory passenger experiences, such as unnecessary detours and prolonged travel delays. Fortunately, a new opportunity to address these limitations has arisen in recent years: the latest expansion of urban information infrastructure enables us to model behaviors of urban transportation systems with massive multi-modal online feeds and to apply effective local and global cyber-control. Our work will transform the efficiency of existing transportation systems because (i) in addition to macro-level historical statistics, the availability of massive micro-level trip information will make it possible to apply fine-grained real-time control to handle rapid changes in dynamic urban environments and (ii) aggregated information from multi-modal transit allows more effective inter-transit coordination.",
-          url: require("../assets/its.jpg")
+            "FreeBee enables direct unicast as well as cross-technology/channel broadcast among three popular wireless technologies: WiFi, ZigBee, and Bluetooth. Our design aims to shed the light on the opportunities that cross-technology communication has to offer including, but not limited to, cross-technology cooperation and coordination. The key concept of FreeBee is to modulate symbol messages by shifting the timing of periodic beacon frames already mandatory for wireless standards without incurring extra traffic. Such a generic cross-technology design consumes zero additional bandwidth, allowing continuous broadcast to safely reach mobile and/or duty-cycled devices. A new interval multiplexing technique is proposed to enable concurrent broadcasts from multiple senders or boost the transmission rate of a single sender.",
+          url: require("../assets/projects/freebee.png")
         },
         {
-          title: "Physical-Layer CTC",
+          title: "BRAVO",
           introduction:
-            "Recent advances in Cross-Technology Communication (CTC) have improved efficient coexistence and cooperation among heterogeneous wireless devices (e.g., WiFi, ZigBee, and Bluetooth) operating in the same ISM band. However, until now the effectiveness of existing CTCs, which rely on packet-level modulation, is limited due to their low throughput (e.g., tens of bps). Our work, named WEBee, opens a promising direction for high-throughput CTC via physical-level emulation. WEBee uses a high-speed wireless radio (e.g., WiFi OFDM) to emulate the desired signals of a low-speed radio (e.g., ZigBee). Our unique emulation technique manipulates only the payload of WiFi packets, requiring neither hardware nor firmware changes in commodity technologies – a feature allowing zero-cost fast deployment on existing WiFi infrastructure. We designed and implemented WEBee with commodity devices (Atheros AR2425 WiFi card and MicaZ CC2420) and the USRP-N210 platform (for PHY layer evaluation). Our comprehensive evaluation reveals that WEBee can achieve a more than 99% reliable parallel CTC between WiFi and ZigBee with 126 Kbps in noisy environments, a throughput about 16,000x faster than current state-of-the-art CTCs.",
-          url: require("../assets/logo.png")
+            "Bike sharing systems, which provide a convenient commute choice for short trips, have emerged rapidly in many cities. While bike sharing has greatly facilitated people's commutes, those systems are facing a costly maintenance issue -- rebalancing bikes among stations. We observe that existing systems frequently suffer situations such as no-bike-to-borrow (empty) or no-dock-to-return (full) due to existing ad hoc rebalancing practice. To address this issue, we provide systematic analysis on user trip data, station status data, rebalancing data, and meteorology data, and propose BRAVO - the first practical data-driven bike rebalancing app for operators to improve bike sharing service while reducing the maintenance cost. Specifically, leveraging experiences from two-round round-the-clock field studies and comprehensive information from four data sets, a data-driven model is proposed to capture and predict the safe rebalancing range for each station. Based on this safe rebalancing range, BRAVO computes the optimal rebalancing amounts for the full and empty stations to minimize the rebalancing cost.",
+          url: require("../assets/projects/bravo.jpg")
         }
 
       ],
