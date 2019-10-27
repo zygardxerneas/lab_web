@@ -29,52 +29,56 @@
       <div v-if="!isMobile">
         <div v-for="(item) in faculty" v-bind:key="item.col">
           <el-row>
-            <el-col span="11" class="item">
-              <el-card shadow="hover">
-                <el-row>
-                  <el-col span="10">
-                    <img :src="item.data[0].photo" alt="picture missed" class="item-pic" />
-                  </el-col>
-                  <el-col span="14" offset="0" class="item-desc">
-                    <el-card style="height:4.5rem">
-                      <div slot="header">
-                        <b style="font-size:19px">{{item.data[0].name}}</b>
-                      </div>
-                      <div v-html="item.data[0].desc"></div>
-                    </el-card>
-                  </el-col>
-                </el-row>
-              </el-card>
-            </el-col>
-            <el-col span="11" offset="1" class="item">
-              <el-card shadow="hover">
-                <el-row>
-                  <el-col span="10">
-                    <img :src="item.data[1].photo" alt="picture missed" class="item-pic" />
-                  </el-col>
-                  <el-col span="14" offset="0" class="item-desc">
-                    <el-card style="height:4.5rem">
-                      <div slot="header">
-                        <b style="font-size:19px">{{item.data[1].name}}</b>
-                      </div>
-                      <div v-html="item.data[1].desc"></div>
-                    </el-card>
-                  </el-col>
-                </el-row>
-              </el-card>
-            </el-col>
+            <div @click="goToUrl(item.data[0].url)">
+              <el-col span=11 class="item">
+                <el-card shadow="hover">
+                  <el-row>
+                    <el-col span=10>
+                      <img :src="item.data[0].photo" alt="picture missed" class="item-pic" />
+                    </el-col>
+                    <el-col span=14 offset=0 class="item-desc">
+                      <el-card style="height:4.5rem">
+                        <div slot="header">
+                          <b style="font-size:19px">{{item.data[0].name}}</b>
+                        </div>
+                        <div style="font-size:15px" v-html="item.data[0].desc"></div>
+                      </el-card>
+                    </el-col>
+                  </el-row>
+                </el-card>
+              </el-col>
+            </div>
+            <div @click="goToUrl(item.data[1].url)">
+              <el-col span=11 offset=1 class="item">
+                <el-card shadow="hover" @click="goToUrl(item.data[0].url)">
+                  <el-row>
+                    <el-col span=10>
+                      <img :src="item.data[1].photo" alt="picture missed" class="item-pic" />
+                    </el-col>
+                    <el-col span=14 offset=0 class="item-desc">
+                      <el-card style="height:4.5rem">
+                        <div slot="header">
+                          <b style="font-size:19px">{{item.data[1].name}}</b>
+                        </div>
+                        <div style="font-size:15px" v-html="item.data[1].desc"></div>
+                      </el-card>
+                    </el-col>
+                  </el-row>
+                </el-card>
+              </el-col>
+            </div>
           </el-row>
         </div>
       </div>
       <div v-else>
         <div v-for="(item) in faculty[0].data" v-bind:key="item">
-          <div class="item" style="width: 100%">
+          <div class="item" style="width: 100%" @click="goToUrl(item.url)">
             <el-card shadow="hover">
               <el-row>
-                <el-col span="10">
+                <el-col span=10>
                   <img :src="item.photo" alt="picture missed" style="width: 100%;height: 4rem" />
                 </el-col>
-                <el-col span="14" offset="0" class="item-desc">
+                <el-col span=14 offset=0 class="item-desc">
                   <el-card style="height:4rem" body-style="padding: 10px">
                     <div>
                       <b style="font-size:0.2rem">{{item.name}}</b>
@@ -148,6 +152,9 @@ export default {
     handleSelect(key, keyPath) {
       window.console.log(key, keyPath);
       this.activeIndex = key;
+    },
+    goToUrl(url){
+      window.location.href = url;
     }
   },
   mounted() {
