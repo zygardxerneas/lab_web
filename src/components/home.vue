@@ -23,8 +23,9 @@
         <div v-for="item in news" :key="item" class="news-item" @click="to_news_item(item)">
           <el-row style="display: flex;align-items: center">
             <el-col :span="18">
-              <i class="el-icon-news" style="display: inline-block"></i>
+
               <div class="news-item-title">
+                <i class="el-icon-news" style="display: inline-block"></i>
                 <span v-for="(it, i) in item.title" :style="item.isChangeTitle[i]? 'color: red;font-style: italic': ''" :key="it">
                   {{it}}
                 </span>
