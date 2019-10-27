@@ -70,11 +70,16 @@ export default {
     }
     this.imgs.push({ url: require("../assets/home/ubicomp2019.jpg")});
     this.introduction_text =
-      "东南大学智慧物联网中心由何田教授任研究中心主任，研究中心行政关系挂靠东南大学计算机科学与工程学院，业务关系隶属学校科研院管理。实验室位于东南大学金智楼。实验室成员包括教授、研究生和本科生，研究方向主要包括：物联网，大数据分析，无线网络，移动通信技术。\n何田教授简介： ACM/IEEE Fellow，国家千人，在顶级期刊和著名国际会议上发表300余篇文章（Google Scholar被引用次数超过22,000次，H-Index 65）。现任包括ACM/IEEE TON，IEEE TC, ACM TOSN在内的七个国际期刊的编委，获八项国际会议的最佳论文奖（包括业界顶会MobiCom，SenSys和ICDCS）。\n王帅教授简介：在国内外期刊IEEE/ACM TON、TPDS、TOC、TOSN、TWC和会议MobiCom、WWW、UbiComp、INFOCOM、SenSys、ICNP、BIGDATA发表论文二十余篇。欢迎对物联网或大数据方向感兴趣的同学加入实验室。";
+      "东南大学智慧物联网研究中心由何田教授领导，研究中心行政关系挂靠东南大学计算机科学与工程学院，业务关系隶属学校科研院管理。实验室位于东南大学金智楼。实验室成员包括教授、研究生和本科生，研究方向主要包括：物联网，大数据分析，无线网络，移动通信技术。\n何田教授简介： ACM/IEEE Fellow，国家千人，在顶级期刊和著名国际会议上发表300余篇文章（Google Scholar被引用次数超过22,000次，H-Index 65）。现任包括ACM/IEEE TON，IEEE TC, ACM TOSN在内的七个国际期刊的编委，获八项国际会议的最佳论文奖（包括业界顶会MobiCom，SenSys和ICDCS）。\n王帅教授简介：在国内外期刊IEEE/ACM TON、TPDS、TOC、TOSN、TWC和会议MobiCom、WWW、UbiComp、INFOCOM、SenSys、ICNP、BIGDATA发表论文二十余篇。欢迎对物联网或大数据方向感兴趣的同学加入实验室。";
     let url = window.location;
     this.news = [
       {
-        title: ["1 paper is accepted by ", "TMC 2019",  " about CTC."],
+        title: ["1 paper is accepted by ", "UbiComp 2019", " about the impacts of anomalies on travel time of multiple transportation systems."],
+        isChangeTitle: [false, true, false],
+        time: "2019-09-11",
+        url: url.origin + "/news"
+      },{
+        title: ["1 paper is accepted by ", "TMC",  " about CTC."],
         isChangeTitle: [false, true, false],
         time: "2019-08-30",
         url: url.origin + "/news"
