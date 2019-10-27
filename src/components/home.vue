@@ -22,14 +22,15 @@
       <div class="news" :style="isMobile? 'padding: 0.2rem 0.4rem': 'padding: 0.4rem 1rem'">
         <div v-for="item in news" :key="item" class="news-item" @click="to_news_item(item)">
           <el-row style="display: flex;align-items: center">
-            <el-col :span="16">
+            <el-col :span="18">
+              <i class="el-icon-news" style="display: inline-block"></i>
               <div class="news-item-title">
                 <span v-for="(it, i) in item.title" :style="item.isChangeTitle[i]? 'color: red;font-style: italic': ''" :key="it">
                   {{it}}
                 </span>
               </div>
             </el-col>
-            <el-col :span="8">
+            <el-col :span="6">
               <div class="news-item-time">{{item.time}}</div>
             </el-col>
           </el-row>
@@ -148,6 +149,8 @@ export default {
           /*white-space: nowrap;*/
           /*overflow: hidden;*/
           /*text-overflow: ellipsis;*/
+          display: inline-block;
+          margin-left: 2px;
         }
         .news-item-time {
           text-align: right;
