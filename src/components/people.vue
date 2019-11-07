@@ -168,7 +168,7 @@ export default {
             photo: require("../assets/people/hetian.jpg"),
             url: "http://www-users.cs.umn.edu/~tianhe/index.html",
             desc:
-              "Group Advisor,<br/>Principal Investigator,<br/>McKnight Land-Grant Professor<br/><br/>tianhe@cs.umn.edu "
+              "IEEE/ACM Fellow<br/>State Distinguished Professor<br/>Director, SING<br/><br/>tianhe@seu.edu.cn"
           },
           {
             id: 2,
@@ -176,7 +176,7 @@ export default {
             photo: require("../assets/people/wangshuai.jpg"),
             url: "https://scholar.google.com/citations?hl=zh-CN&user=gfDfZqAAAAAJ&view_op=list_works&sortby=pubdate",
             desc:
-              "Internet of Things,<br/>Data Analytics,<br/>Wireless Networks And Sensors,<br/>Network Coding<br/><br/>shuaiwang@seu.edu.cn"
+              "Professor<br/>Executive Director, SING<br/><br/>Internet of Things,<br/>Data Analytics,<br/>Wireless Networks And Sensors,<br/><br/>shuaiwang@seu.edu.cn"
           }
         ]
       }

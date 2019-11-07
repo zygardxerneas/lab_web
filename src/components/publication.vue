@@ -96,10 +96,6 @@
                 {
                     year:2017,
                     papers:[{
-                        source: "Wireless Power Transfer Algorithms and Applications in Ad hoc Communication Networks, Springer Inc,2017",
-                        title: "Radiation Constrained Charging Utility Optimization for Human Safety",
-                        author: ["Haipeng Dai", "Guihai Chen", "Yunhuai Liu", "Tian He"]
-                    },{
                         source: "2017 26th International Conference on Computer Communication and Networks (ICCCN),2017",
                         title: "Achieving spectrum efficient communication under cross-technology interference",
                         author: ["Shuai Wang", "Zhimeng Yin", "Song Min Kim", "Tian He"]
