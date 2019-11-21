@@ -1,72 +1,51 @@
 <template>
   <div class="people">
-    <!-- <el-backtop></el-backtop> -->
-<!--    <div class="title" style>PEOPLE</div>-->
-
     <el-menu :default-active="activeIndex" class="select" mode="horizontal"
              @select="handleSelect" background-color="#fff" active-text-color="#ffd04b">
-<!--      <el-row>-->
-<!--        <el-col span="3" offset="7">-->
-<!--          <el-menu-item class="select-item" index="faculty">Faculty</el-menu-item>-->
-<!--        </el-col>-->
-<!--        <el-col span="3">-->
-<!--          <el-menu-item class="select-item" index="student">Student</el-menu-item>-->
-<!--        </el-col>-->
-<!--        <el-col span="3">-->
-<!--          <el-menu-item class="select-item" index="link">-->
-<!--            <a href="https://www.baidu.com" target="_blank">Future</a>-->
-<!--          </el-menu-item>-->
-<!--        </el-col>-->
-<!--      </el-row>-->
+
       <el-menu-item class="select-item" index="faculty">Faculty</el-menu-item>
       <el-menu-item class="select-item" index="student">Student</el-menu-item>
-      <el-menu-item class="select-item" index="link">
-        <a href="https://www.baidu.com" target="_blank">Future</a>
-      </el-menu-item>
+      <el-menu-item class="select-item" index="link">Future</el-menu-item>
     </el-menu>
 
     <div class="list" v-if="activeIndex=='faculty'">
       <div v-if="!isMobile">
         <div v-for="(item) in faculty" v-bind:key="item.col">
-          <el-row>
-            <div @click="goToUrl(item.data[0].url)">
-              <el-col span=11 class="item">
+          <el-row :gutter="20">
+              <el-col :span=24 class="item">
                 <el-card shadow="hover">
                   <el-row>
-                    <el-col span=10>
-                      <img :src="item.data[0].photo" alt="picture missed" class="item-pic" />
+                    <el-col :span=6>
+                      <img @click="goToUrl(item.data[0].url)" :src="item.data[0].photo" alt="picture missed" class="item-pic"  />
                     </el-col>
-                    <el-col span=14 offset=0 class="item-desc">
+                    <el-col :span=18 offset=0 class="item-desc">
                       <el-card style="height:4.5rem">
                         <div slot="header">
                           <b style="font-size:19px">{{item.data[0].name}}</b>
                         </div>
-                        <div style="font-size:15px" v-html="item.data[0].desc"></div>
+                        <div style="font-size:15px; " v-html="item.data[0].desc"></div>
                       </el-card>
                     </el-col>
                   </el-row>
                 </el-card>
               </el-col>
-            </div>
-            <div @click="goToUrl(item.data[1].url)">
-              <el-col span=11 offset=1 class="item">
+              <el-col :span=24 class="item">
                 <el-card shadow="hover" @click="goToUrl(item.data[0].url)">
                   <el-row>
-                    <el-col span=10>
-                      <img :src="item.data[1].photo" alt="picture missed" class="item-pic" />
+                    <el-col :span=6>
+                      <img  @click="goToUrl(item.data[1].url)" :src="item.data[1].photo" alt="picture missed" class="item-pic" />
                     </el-col>
-                    <el-col span=14 offset=0 class="item-desc">
+                    <el-col :span=18 offset=0 class="item-desc">
                       <el-card style="height:4.5rem">
                         <div slot="header">
                           <b style="font-size:19px">{{item.data[1].name}}</b>
                         </div>
-                        <div style="font-size:15px" v-html="item.data[1].desc"></div>
+                        <div style="font-size:15px;" v-html="item.data[1].desc"></div>
                       </el-card>
                     </el-col>
                   </el-row>
                 </el-card>
               </el-col>
-            </div>
           </el-row>
         </div>
       </div>
@@ -97,7 +76,7 @@
     <div class="list" v-if="activeIndex=='student'">
       <div v-for="(item) in student" v-bind:key="item.col">
         <el-row>
-          <el-col span="11" class="item">
+          <el-col :span="24" class="item">
             <el-card shadow="hover">
               <el-row>
                 <el-col span="10">
@@ -114,7 +93,7 @@
               </el-row>
             </el-card>
           </el-col>
-          <el-col span="11" offset="1" class="item">
+          <el-col span="24" offset="1" class="item">
             <el-card shadow="hover">
               <el-row>
                 <el-col span="10">
@@ -168,7 +147,13 @@ export default {
             photo: require("../assets/people/hetian.jpg"),
             url: "http://www-users.cs.umn.edu/~tianhe/index.html",
             desc:
-              "IEEE/ACM Fellow<br/>State Distinguished Professor<br/>Director, SING<br/><br/>tianhe@seu.edu.cn"
+              "IEEE/ACM Fellow, State Distinguished Professor<br/>" +
+                    "Director, SING(Southeast University Information Network Group)<br/><br/>" +
+                    "Research Interests: Wireless Coexistence, Posture/Behavior Estimation, " +
+                    "Social Interaction Monitoring, " +
+                    "Large-Scale Intelligent Transportation Systems (road network efficiency and safety), " +
+                    "Rechargeable Sensor Systems/Battery Array Management/Safe Charging.<br/><br/>" +
+                    "Email: tianhe@seu.edu.cn"
           },
           {
             id: 2,
@@ -176,54 +161,16 @@ export default {
             photo: require("../assets/people/wangshuai.jpg"),
             url: "https://scholar.google.com/citations?hl=zh-CN&user=gfDfZqAAAAAJ&view_op=list_works&sortby=pubdate",
             desc:
-              "Professor<br/>Executive Director, SING<br/><br/>Internet of Things,<br/>Data Analytics,<br/>Wireless Networks And Sensors,<br/><br/>shuaiwang@seu.edu.cn"
+              "Professor, School of Computer Science and Engineering, Southeast University<br/>Executive Director, SING(Southeast University Information Network Group)" +
+                    "<br/><br/>Research Interests: Internet of Things, Data Analytics, " +
+                    "Wireless Networks And Sensors.<br/><br/>" +
+                    "Email: shuaiwang@seu.edu.cn<br/>Phone Number: 17867976559"
           }
         ]
       }
     ];
     this.student = [
-      // {
-      //   col: 1,
-      //   data: [
-      //     {
-      //       id: 1,
-      //       name: "学生一号",
-      //       photo: require("../assets/sunkai.jpg"),
-      //       desc:
-      //         "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
-      //         "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介"
-      //     },
-      //     {
-      //       id: 2,
-      //       name: "学生二号",
-      //       photo: require("../assets/sunkai.jpg"),
-      //       desc:
-      //         "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
-      //         "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介"
-      //     }
-      //   ]
-      // },
-      // {
-      //   col: 2,
-      //   data: [
-      //     {
-      //       id: 3,
-      //       name: "学生三号",
-      //       photo: require("../assets/sunkai.jpg"),
-      //       desc:
-      //         "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
-      //         "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介"
-      //     },
-      //     {
-      //       id: 4,
-      //       name: "学生四号",
-      //       photo: require("../assets/sunkai.jpg"),
-      //       desc:
-      //         "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介" +
-      //         "这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介"
-      //     }
-      //   ]
-      // }
+
     ];
   }
 };
@@ -257,20 +204,21 @@ export default {
     }
   }
   .list {
-    padding-left: 0;
-    height: 0.1rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Times New Roman';
     .item {
       padding-bottom: 2%;
-      width: 47.9111%;
       .item-desc {
         font-size: 14px;
         text-align: left;
       }
       .item-pic {
-        /*width: 100%;*/
         height: 243px;
         width: 196px;
       }
+
     }
   }
 }

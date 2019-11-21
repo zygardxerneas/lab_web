@@ -5,7 +5,6 @@
         <div v-if="isMobile">
             <div>
                 <h1>{{item.title}}</h1>
-                <h2>{{item.people}}</h2>
                 <img :src="item.url" style="width: 90%;" @click="on_click_img(item.url)" />
             </div>
             <div style="padding: 0.5rem 0.2rem;text-align: left">
@@ -17,7 +16,6 @@
                 <el-col :span="8" class="projects-aside">
                     <div>
                         <h1>{{item.title}}</h1>
-                        <h2>{{item.people}}</h2>
                         <img :src="item.url" class="projects-image" @click="on_click_img(item.url)" />
                     </div>
                 </el-col>
