@@ -69,15 +69,20 @@ export default {
     for (let i = 0; i < 1; i++) {
       this.imgs.push({ url: require("../assets/home/use_sing.jpg"), id: i });
     }
-    this.imgs.push({ url: require("../assets/home/ubicomp2019.jpg")});
+    // this.imgs.push({ url: require("../assets/home/ubicomp2019.jpg")});
     this.introduction_text =
       "<ul>" +
-        "<li>东南大学智慧物联网研究中心由何田、王帅教授领导，实验室简称：SING(Southeast University Information Network Group)。实验室研究方向主要包括：物联网，大数据分析，无线网络，移动通信技术。欢迎对物联网或大数据方向感兴趣的同学申请加入实验室团队。</li>" +
+        "<li>东南大学智慧物联网研究中心由何田、王帅教授领导，实验室简称：SING(Southeast University Information and Network Group)。实验室研究方向主要包括：物联网，大数据分析，无线网络，移动通信技术。欢迎对物联网或大数据方向感兴趣的同学申请加入实验室团队。</li>" +
         "<li>何田教授简介： ACM/IEEE Fellow，国家特聘教授，在顶级期刊和著名国际会议上发表300余篇文章（Google Scholar被引用次数超过22,000次，H-Index 65）。现任包括ACM/IEEE TON，IEEE TC, ACM TOSN在内的七个国际期刊的编委，获八项国际会议的最佳论文奖（包括业界顶会MobiCom，SenSys和ICDCS）。</li>" +
         "<li>王帅教授简介：毕业于美国明尼苏达大学计算机科学与工程系，在国内外期刊IEEE/ACM TON、TPDS、TOC、TOSN、TWC和会议MobiCom、WWW、UbiComp、INFOCOM、SenSys、ICNP、BIGDATA发表论文二十余篇。</li>";
     let url = window.location;
     this.news = [
       {
+        title: ["1 paper is accepted by ", "TITS", " about observe human mobility via vehicular internet service\n."],
+        isChangeTitle: [false, true, false],
+        time: "2019-11-22",
+        url: url.origin + "/news"
+      },{
         title: ["1 paper is accepted by ", "UbiComp 2019", " about the impacts of anomalies on travel time of multiple transportation systems."],
         isChangeTitle: [false, true, false],
         time: "2019-09-11",

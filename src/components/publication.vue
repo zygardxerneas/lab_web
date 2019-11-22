@@ -61,6 +61,10 @@
                 publications: [{
                     year: 2019,
                     papers: [{
+                        source: "IEEE Transactions on Intelligent Transportation Systems (TITS), 2019",
+                        title: "ViFi-MobiScanner: Observe Human Mobility via Vehicular Internet Service",
+                        author: ["Lai Tu", "Shuai Wang", "Desheng Zhang", "Fan Zhang", "Tian He"],
+                    },{
                         source: "Ubicomp'19, London, UK, 2019",
                         title: "MAC: Measuring the Impacts of Anomalies on Travel Time of Multiple Transportation Systems",
                         author: ["Zhihan Fang", "Yu Yang", "Shuai Wang", "Boyang Fu", "Zixing Song", "Fan Zhang", "Desheng Zhang"],

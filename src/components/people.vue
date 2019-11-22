@@ -148,7 +148,7 @@ export default {
             url: "http://www-users.cs.umn.edu/~tianhe/index.html",
             desc:
               "IEEE/ACM Fellow, State Distinguished Professor<br/>" +
-                    "Director, SING(Southeast University Information Network Group)<br/><br/>" +
+                    "Director, SING(Southeast University Information and Network Group)<br/><br/>" +
                     "Research Interests: Wireless Coexistence, Posture/Behavior Estimation, " +
                     "Social Interaction Monitoring, " +
                     "Large-Scale Intelligent Transportation Systems (road network efficiency and safety), " +
@@ -161,10 +161,10 @@ export default {
             photo: require("../assets/people/wangshuai.jpg"),
             url: "https://scholar.google.com/citations?hl=zh-CN&user=gfDfZqAAAAAJ&view_op=list_works&sortby=pubdate",
             desc:
-              "Professor, School of Computer Science and Engineering, Southeast University<br/>Executive Director, SING(Southeast University Information Network Group)" +
+              "Professor, School of Computer Science and Engineering, Southeast University<br/>Executive Director, SING(Southeast University Information and Network Group)" +
                     "<br/><br/>Research Interests: Internet of Things, Data Analytics, " +
                     "Wireless Networks And Sensors.<br/><br/>" +
-                    "Email: shuaiwang@seu.edu.cn<br/>Phone Number: 17867976559"
+                    "Email: shuaiwang@seu.edu.cn<br/>Phone Number: 17867966559"
           }
         ]
       }
