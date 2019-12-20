@@ -147,7 +147,7 @@ export default {
             photo: require("../assets/people/hetian.jpg"),
             url: "http://www-users.cs.umn.edu/~tianhe/index.html",
             desc:
-              "IEEE/ACM Fellow, State Distinguished Professor<br/>" +
+              "IEEE/ACM Fellow<br/>" +
                     "Director, SING(Southeast University Information and Network Group)<br/><br/>" +
                     "Research Interests: Wireless Coexistence, Posture/Behavior Estimation, " +
                     "Social Interaction Monitoring, " +
