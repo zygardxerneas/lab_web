@@ -61,6 +61,10 @@
                 publications: [{
                     year: 2019,
                     papers: [{
+                        source: "IEEE/ACM Transactions on Networking (TON), 2019",
+                        title: "Reliable Physical-Layer Cross-Technology Communication with Emulation Error Correction",
+                        author: ["Yongrui Chen", "Shuai Wang", "Zhijun Li", "Tian He"],
+                    },{
                         source: "IEEE Transactions on Intelligent Transportation Systems (TITS), 2019",
                         title: "ViFi-MobiScanner: Observe Human Mobility via Vehicular Internet Service",
                         author: ["Lai Tu", "Shuai Wang", "Desheng Zhang", "Fan Zhang", "Tian He"],

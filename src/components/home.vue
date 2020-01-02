@@ -78,6 +78,11 @@ export default {
     let url = window.location;
     this.news = [
       {
+        title: ["1 paper is accepted by ", "TON", " about reliable Cross-Technology Communication\n."],
+        isChangeTitle: [false, true, false],
+        time: "2019-12-28",
+        url: url.origin + "/news"
+      },{
         title: ["1 paper is accepted by ", "TITS", " about sensing human mobility via vehicular internet service\n."],
         isChangeTitle: [false, true, false],
         time: "2019-11-22",
