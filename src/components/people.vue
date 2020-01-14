@@ -217,8 +217,8 @@ export default {
       .item-pic {
         height: 243px;
         width: 196px;
+        cursor: pointer;
       }
-
     }
   }
 }

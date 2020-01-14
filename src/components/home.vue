@@ -58,7 +58,7 @@ export default {
     },
     to_news_item: function(item) {
       window.console.log(item.title);
-      window.location.href = item.url;
+      // window.location.href = item.url;
     }
   },
   mounted() {
@@ -77,13 +77,23 @@ export default {
         "<li>王帅教授简介：毕业于美国明尼苏达大学计算机科学与工程系，在国内外期刊IEEE/ACM TON、TPDS、TOC、TOSN、TWC和会议MobiCom、WWW、UbiComp、INFOCOM、SenSys、ICNP、BIGDATA发表论文三十余篇。</li>";
     let url = window.location;
     this.news = [
+      {  title: ["1 paper is accepted by ", "WWW 2020", " about web usage representativeness modeling and correction based on diverse cellular networks."],
+        isChangeTitle: [false, true, false],
+        time: "2020-01-11",
+        url: url.origin + "/news"
+      }, {
+        title: ["3 papers are accepted by ", "UbiComp 2020", "."],
+        isChangeTitle: [false, true, false],
+        time: "2020-01-10",
+        url: url.origin + "/news"
+      },
       {
-        title: ["1 paper is accepted by ", "TON", " about reliable Cross-Technology Communication\n."],
+        title: ["1 paper is accepted by ", "TON", " about reliable cross-technology communication."],
         isChangeTitle: [false, true, false],
         time: "2019-12-28",
         url: url.origin + "/news"
       },{
-        title: ["1 paper is accepted by ", "TITS", " about sensing human mobility via vehicular internet service\n."],
+        title: ["1 paper is accepted by ", "TITS", " about sensing human mobility via vehicular internet service."],
         isChangeTitle: [false, true, false],
         time: "2019-11-22",
         url: url.origin + "/news"
@@ -93,7 +103,7 @@ export default {
         time: "2019-09-11",
         url: url.origin + "/news"
       },{
-        title: ["1 paper is accepted by ", "TMC",  " about Cross-Technology Communication."],
+        title: ["1 paper is accepted by ", "TMC",  " about bidirectional cross-technology communication."],
         isChangeTitle: [false, true, false],
         time: "2019-08-30",
         url: url.origin + "/news"
@@ -139,7 +149,6 @@ export default {
     .title {
       padding: 0.2rem 1rem;
       font-size: 0.6rem;
-      /*background-color: rgb(81, 47, 242);*/
       background-color: #3895bf;
       color: white;
     }
@@ -152,23 +161,15 @@ export default {
       text-align: justify;
       line-height: 35px;
       font-family: 'Times New Roman', "华文仿宋" ;
-      /*<!--font: 20px/1.8 Inconsolata, sans-serif;-->*/
     }
     .news {
-      /*margin-top: 1rem;*/
       box-shadow: rgba(0, 0, 0, 0.12) 0 2px 20px,
         rgba(0, 0, 0, 0.04) 0 0 20px;
       font-size: 0.4rem;
       text-align: left;
-      /*display: flex;*/
-      /*justify-content: space-between;*/
       .news-item {
         margin-top: 0.3rem;
-        cursor: pointer;
         .news-item-title {
-          /*white-space: nowrap;*/
-          /*overflow: hidden;*/
-          /*text-overflow: ellipsis;*/
           display: inline-block;
           margin-left: 2px;
         }

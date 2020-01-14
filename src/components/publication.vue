@@ -24,13 +24,13 @@
                         <div class="time-title">{{item.year}}</div>
                         <div class="paper-box">
                             <div v-for="(paper, index) in item.papers" :key="index" class="per-paper">
-                                <span><strong>{{index+1}}.</strong></span>
+                                <span><strong>{{index+1}}.&nbsp;</strong></span>
                                 <span v-for="(a, ai) in paper.author" :key="ai">
-                                    <span :style="isLab(a)? 'text-decoration: underline;': ''">
+                                    <div :style="isLab(a)? 'text-decoration: underline;': ''" style="display: inline-block">
                                         {{a}}
-                                    </span>
+                                    </div>
                                     <span v-if="ai < paper.author.length-2">,&nbsp;</span>
-                                    <span v-else-if="ai == paper.author.length-2">and</span>
+                                    <span v-else-if="ai == paper.author.length-2">&nbsp;and&nbsp;</span>
                                 </span>
                                 <span>.&nbsp;</span>
                                 <span><strong>{{paper.title}}</strong></span>
@@ -59,17 +59,38 @@
         data() {
             return {
                 publications: [{
-                    year: 2019,
+                    year: 2020,
                     papers: [{
-                        source: "IEEE/ACM Transactions on Networking (TON), 2019",
+                        source: "WWW, TaiPei, China, 2020",
+                        title: "CellRep: Usage Representativeness Modeling and Correction Based on Multiple City-Scale Cellular Networks",
+                        author: ["Zhihan Fang", "Guang Wang", "Shuai Wang", "Chaoji Zuo", "Fan Zhang", "Desheng Zhang"],
+                    },{
+                        source: "UbiComp, Cancún, México, 2020",
+                        title: "CellPred: A Behavior-aided Scheme for Cellular Data Usage Prediction",
+                        author: ["Zhou Qin", "Fang Cao", "Yu Yang", "Shuai Wang",
+                            "Yunhuai Liu", "Chang Tan", "Desheng Zhang" ],
+                    },{
+                        source: "UbiComp, Cancún, México, 2020",
+                        title: "Data-Driven Battery-Lifetime-Aware Scheduling for Electric Bus Fleets",
+                        author: ["Songyuan Li", "Shibo He", "Shuai Wang", "Tian He", "Jiming Chen"],
+                    },{
+                        source: "UbiComp, Cancún, México, 2020",
+                        title: "FairCharge: A Data-Driven Fairness-Aware Charging Recommendation System for Large-Scale Electric Taxi Fleets",
+                        author: ["Guang Wang", "Yongfeng Zhang", "Zhihan Fang", "Shuai Wang", "Fan Zhang", "Desheng Zhang"],
+                    },{
+                        source: "IEEE/ACM Transactions on Networking (TON), 2020",
                         title: "Reliable Physical-Layer Cross-Technology Communication with Emulation Error Correction",
                         author: ["Yongrui Chen", "Shuai Wang", "Zhijun Li", "Tian He"],
-                    },{
+                    }]
+                },
+                    {
+                    year: 2019,
+                    papers: [{
                         source: "IEEE Transactions on Intelligent Transportation Systems (TITS), 2019",
                         title: "ViFi-MobiScanner: Observe Human Mobility via Vehicular Internet Service",
                         author: ["Lai Tu", "Shuai Wang", "Desheng Zhang", "Fan Zhang", "Tian He"],
                     },{
-                        source: "Ubicomp'19, London, UK, 2019",
+                        source: "UbiComp'19, London, UK, 2019",
                         title: "MAC: Measuring the Impacts of Anomalies on Travel Time of Multiple Transportation Systems",
                         author: ["Zhihan Fang", "Yu Yang", "Shuai Wang", "Boyang Fu", "Zixing Song", "Fan Zhang", "Desheng Zhang"],
                     },{
@@ -79,7 +100,7 @@
                     },{
                         source: "IEEE Transactions on Mobile Computing (TMC), 2019",
                         title: "Networking Support For Bidirectional Cross-Technology Communication",
-                        author: ["Shuai Wang", "Z. Yin", "S. Wang", "Y. Chen", "Z. Li", "S. Kim",  "Tian He"],
+                        author: ["Shuai Wang", "Z. Yin", "Sh. Wang", "Y. Chen", "Z. Li", "S. Kim",  "Tian He"],
                     }]
                 },{
                     year: 2018,
@@ -92,7 +113,7 @@
                         title: "Concurrent Transmission Aware Routing in Wireless Networks",
                         author: ["Shuai Wang", "Song Min Kim", "Linghe Kong", "Tian He"]
                     },{
-                        source: "Ubicomp'18, Singapore, 2018",
+                        source: "UbiComp'18, Singapore, 2018",
                         title: "BRAVO: Improving the Rebalancing Operation in Bike Sharing with Rebalancing Range Prediction",
                         author: ["Shuai Wang", "Tian He", "D. Zhang", "Y. Shu", "Y. Liu", "Y. Gu", "C. Liu", "H. Lee", "S. Son"]
                     },{
@@ -109,30 +130,25 @@
                         author: ["Shuai Wang", "Zhimeng Yin", "Song Min Kim", "Tian He"]
                     },
                     {
-                        source: "INFOCOM 2017",
-                        title: "C-Morse: Cross-Technology Communication with Transparent Morse Coding",
-                        author: ["Tian He", "Zhimeng Yin", "Wenchao Jiang", "Song Min Kim"]
+                        source: "IEEE/ACM Transactions on Sensor Networks (TOSN) 2017",
+                        title: "Encode When Necessary: Correlated Network Coding under Unreliable Wireless Links",
+                        author: ["Shuai Wang", "S. Kim", "Z. Yin", "Tian He"]
                     },
                     {
-                        source: "ICDCS 2017",
-                        title: "Task-aware TCP in Data Center Networks",
-                        author: ["Sen Liu", "Jiawei Huang", "Yutao Zhou", "Jianxin Wang", "Tian He"]
+                        source: "IEEE/ACM Transactions on Networking (TON) 2017",
+                        title: "Free Side-channel Cross-technology Communication in Wireless Networks",
+                        author: ["S. Kim", "S. Ishida", "Shuai Wang", "Tian He"]
                     },
                     {
-                        source: "ICDCS 2017",
-                        title: "Flow-Aware Adaptive Pacing to Mitigate TCP Incast in Data center Networks",
-                        author: ["Shaojun Zou", "Jiawei Huang", "Yutao Zhou", "Jianxin Wang", "Tian He"]
+                        source: "IEEE/ACM Transactions on Networking (TON) 2017",
+                        title: "Exploiting Spatiotemporal Correlation for Wireless Networks under Interference",
+                        author: ["S. Kim", "Shuai Wang", "Tian He"]
                     },
 
                     {
-                        source: "IOTDI 2017",
-                        title: "ATHOME: Automatic Tunable Wireless Charging for Smart Home",
-                        author: ["Zheng Dong", "Yu Gu", "Lingkun Fu", "Jiming Chen","Tian He","Cong Liu"]
-                    },
-                    {
-                        source: "2017 ACM/IEEE 8th International Conference on Cyber-Physical Systems",
-                        title: "Battery State-of-Health Estimation for Mobile Devices",
-                        author: ["Liang He", "Eugene Kim", "Kang Shin", "Guozhu Meng","Tian He"]
+                        source: "IEEE Transactions on Big Data (TBD) 2017",
+                        title: "Data-Driven Digital Advertissing with Uncertain Demand Model in Metro Networks",
+                        author: ["R. Jiang", "Z. Feng", "D. Zhang", "Shuai Wang", "Y. Zhu", "F. Zhang", "Tian He"]
                     }
                     ]
                 },
@@ -141,25 +157,25 @@
                     papers:[{
                         source: "IEEE Transactions on Wireless Communications, 2016",
                         title: " A Unified Metric for Correlated Diversity in Wireless Networks",
-                        author: ["S. Wang", "S. M. Kim", " G. Tan", "Y. Liu","T. He"]
+                        author: ["S. Wang", "A. Basalamah", "S. M. Kim", " G. Tan", "Y. Liu","T. He"]
                     },
                     {
-                        source: "ACM Transactions on Cyber-Physical Systems, 2016",
-                        title: "Last-Mile Transit Service with Urban Infrastructure Data",
-                        author: ["Desheng Zhang", "Juanjuan Zhao", "Fan Zhang", "Ruobing Jiang","Tian He","Papanikolopouls Nikos"]
+                        source: "IEEE/ACM Transactions on Networking (TON), 2015",
+                        title: "CorLayer: A Transparent Link Correlation Layer for Energy Efficient Broadcast",
+                        author: ["Shuai Wang", "Song Min Kim", "Yunhuai Liu", "Guang Tan","Tian He"]
                     },
                     {
-                        source: "ACM Transactions on Sensor Networks,2016",
-                        title: "ATPC: Adaptive Transmission Power Control for Wireless Sensor Networks",
-                        author: ["Fei Miao", "Jingbin Zhang", "Gang Zhou", "Lin Gu","Tian He","John A. Stankovic","Sang Son","George J. Pappas"]
+                        source: "RTCSA'16, Daegu, South Korea, 2016",
+                        title: "IoT Networking: From Coexistence to Collaboration",
+                        author: ["S. Kim", "Shuai Wang", "Tian He"]
                     }]
                 },
                 {
                     year:2015,
                     papers:[{
-                        source: "IEEE Conference on Computer Communications (INFOCOM), 2015",
-                        title: "Exploiting causes and effects of wireless link correlation for better performance",
-                        author: ["Desheng Zhang", "Juanjuan Zhao", "Fan Zhang", "Tian He","Papanikolopouls Nikos"]
+                        source: "IEEE/ACM Transactions on Networking (TON), 2015",
+                        title: "CorLayer: A Transparent Link Correlation Layer for Energy Efficient Broadcast",
+                        author: ["Shuai Wang", "Song Min Kim", "Yunhuai Liu", "Guang Tan","Tian He"]
                     },{
                         source: "IEEE Transactions on Wireless Communications, 2015",
                         title: "Delay-bounded transmission power control for low-duty-cycle sensor networks",
@@ -175,7 +191,7 @@
                     }]
                 },
                 ],
-                labPeople: ["Shuai Wang", "Tian He", "S. Wang", "T. He"]
+                labPeople: ["Shuai Wang", "S. Wang"]
 
             }
         },
@@ -219,12 +235,11 @@
                     padding-right: 1rem;
                     .year{
                         display: inline-block;
-                        font-size: 0.3rem;
-                        width: 1rem;
+                        font-size: 0.4rem;
+                        width: 1.3rem;
                     }
                 }
                 .my-time-line{
-                    /*margin-top: 1rem;*/
                     padding-left: 1rem;
                     padding-right: 1rem;
                     .time-title{
