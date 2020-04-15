@@ -1,18 +1,18 @@
 <template>
   <div class="home">
     <!-- <el-backtop></el-backtop> -->
-    <div class="head_pic">
+    <!--<div class="head_pic">
       <el-carousel :height="isMobile? '': '600px'">
         <el-carousel-item
           v-for="(item, index) in imgs"
           :key="index"
           style="display: inline-flex;justify-content: center;align-content: end">
-          <!--<span class="small">{{ item }}</span>-->
+          &lt;!&ndash;<span class="small">{{ item }}</span>&ndash;&gt;
           <img :src="item.url" style="width: 100%;height: 100%; background-size:cover;" @click="on_click_img(item.id)" />
         </el-carousel-item>
       </el-carousel>
-    </div>
-    <hr align="center" width="100%" color="#409EFF" size="10" style="margin-top: 1rem" />
+    </div>-->
+<!--    <hr align="center" width="100%" color="#409EFF" size="10" style="margin-top: 1rem" />-->
     <div class="introduction">
       <div class="title">实验室简介</div>
       <div class="text" v-html="introduction_text"></div>
