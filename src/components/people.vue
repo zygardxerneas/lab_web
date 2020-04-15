@@ -29,23 +29,23 @@
                   </el-row>
                 </el-card>
               </el-col>
-              <el-col :span=24 class="item">
-                <el-card shadow="hover" @click="goToUrl(item.data[0].url)">
-                  <el-row>
-                    <el-col :span=6>
-                      <img  @click="goToUrl(item.data[1].url)" :src="item.data[1].photo" alt="picture missed" class="item-pic" />
-                    </el-col>
-                    <el-col :span=18 offset=0 class="item-desc">
-                      <el-card style="height:4.5rem">
-                        <div slot="header">
-                          <b style="font-size:19px">{{item.data[1].name}}</b>
-                        </div>
-                        <div style="font-size:15px;" v-html="item.data[1].desc"></div>
-                      </el-card>
-                    </el-col>
-                  </el-row>
-                </el-card>
-              </el-col>
+<!--              <el-col :span=24 class="item">-->
+<!--                <el-card shadow="hover" @click="goToUrl(item.data[0].url)">-->
+<!--                  <el-row>-->
+<!--                    <el-col :span=6>-->
+<!--                      <img  @click="goToUrl(item.data[1].url)" :src="item.data[1].photo" alt="picture missed" class="item-pic" />-->
+<!--                    </el-col>-->
+<!--                    <el-col :span=18 offset=0 class="item-desc">-->
+<!--                      <el-card style="height:4.5rem">-->
+<!--                        <div slot="header">-->
+<!--                          <b style="font-size:19px">{{item.data[1].name}}</b>-->
+<!--                        </div>-->
+<!--                        <div style="font-size:15px;" v-html="item.data[1].desc"></div>-->
+<!--                      </el-card>-->
+<!--                    </el-col>-->
+<!--                  </el-row>-->
+<!--                </el-card>-->
+<!--              </el-col>-->
           </el-row>
         </div>
       </div>
@@ -156,7 +156,7 @@ export default {
           //           "Email: tianhe@seu.edu.cn"
           // },
           {
-            id: 2,
+            id: 1,
             name: "SHUAI WANG",
             photo: require("../assets/people/wangshuai.jpg"),
             url: "https://scholar.google.com/citations?hl=zh-CN&user=gfDfZqAAAAAJ&view_op=list_works&sortby=pubdate",
