@@ -141,20 +141,20 @@ export default {
       {
         col: 1,
         data: [
-          {
-            id: 1,
-            name: "TIAN HE",
-            photo: require("../assets/people/hetian.jpg"),
-            url: "http://www-users.cs.umn.edu/~tianhe/index.html",
-            desc:
-              "IEEE/ACM Fellow<br/>" +
-                    "Director, SING(Southeast University Information and Network Group)<br/><br/>" +
-                    "Research Interests: Wireless Coexistence, Posture/Behavior Estimation, " +
-                    "Social Interaction Monitoring, " +
-                    "Large-Scale Intelligent Transportation Systems (road network efficiency and safety), " +
-                    "Rechargeable Sensor Systems/Battery Array Management/Safe Charging.<br/><br/>" +
-                    "Email: tianhe@seu.edu.cn"
-          },
+          // {
+          //   id: 1,
+          //   name: "TIAN HE",
+          //   photo: require("../assets/people/hetian.jpg"),
+          //   url: "http://www-users.cs.umn.edu/~tianhe/index.html",
+          //   desc:
+          //     "IEEE/ACM Fellow<br/>" +
+          //           "Director, SING(Southeast University Information and Network Group)<br/><br/>" +
+          //           "Research Interests: Wireless Coexistence, Posture/Behavior Estimation, " +
+          //           "Social Interaction Monitoring, " +
+          //           "Large-Scale Intelligent Transportation Systems (road network efficiency and safety), " +
+          //           "Rechargeable Sensor Systems/Battery Array Management/Safe Charging.<br/><br/>" +
+          //           "Email: tianhe@seu.edu.cn"
+          // },
           {
             id: 2,
             name: "SHUAI WANG",
