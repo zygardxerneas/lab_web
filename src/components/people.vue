@@ -29,23 +29,23 @@
                   </el-row>
                 </el-card>
               </el-col>
-<!--              <el-col :span=24 class="item">-->
-<!--                <el-card shadow="hover" @click="goToUrl(item.data[0].url)">-->
-<!--                  <el-row>-->
-<!--                    <el-col :span=6>-->
-<!--                      <img  @click="goToUrl(item.data[1].url)" :src="item.data[1].photo" alt="picture missed" class="item-pic" />-->
-<!--                    </el-col>-->
-<!--                    <el-col :span=18 offset=0 class="item-desc">-->
-<!--                      <el-card style="height:4.5rem">-->
-<!--                        <div slot="header">-->
-<!--                          <b style="font-size:19px">{{item.data[1].name}}</b>-->
-<!--                        </div>-->
-<!--                        <div style="font-size:15px;" v-html="item.data[1].desc"></div>-->
-<!--                      </el-card>-->
-<!--                    </el-col>-->
-<!--                  </el-row>-->
-<!--                </el-card>-->
-<!--              </el-col>-->
+              <el-col :span=24 class="item">
+                <el-card shadow="hover" @click="goToUrl(item.data[0].url)">
+                  <el-row>
+                    <el-col :span=6>
+                      <img  @click="goToUrl(item.data[1].url)" :src="item.data[1].photo" alt="picture missed" class="item-pic" />
+                    </el-col>
+                    <el-col :span=18 offset=0 class="item-desc">
+                      <el-card style="height:4.5rem">
+                        <div slot="header">
+                          <b style="font-size:19px">{{item.data[1].name}}</b>
+                        </div>
+                        <div style="font-size:15px;" v-html="item.data[1].desc"></div>
+                      </el-card>
+                    </el-col>
+                  </el-row>
+                </el-card>
+              </el-col>
           </el-row>
         </div>
       </div>
@@ -141,30 +141,31 @@ export default {
       {
         col: 1,
         data: [
-          // {
-          //   id: 1,
-          //   name: "TIAN HE",
-          //   photo: require("../assets/people/hetian.jpg"),
-          //   url: "http://www-users.cs.umn.edu/~tianhe/index.html",
-          //   desc:
-          //     "IEEE/ACM Fellow<br/>" +
-          //           "Director, SING(Southeast University Information and Network Group)<br/><br/>" +
-          //           "Research Interests: Wireless Coexistence, Posture/Behavior Estimation, " +
-          //           "Social Interaction Monitoring, " +
-          //           "Large-Scale Intelligent Transportation Systems (road network efficiency and safety), " +
-          //           "Rechargeable Sensor Systems/Battery Array Management/Safe Charging.<br/><br/>" +
-          //           "Email: tianhe@seu.edu.cn"
-          // },
           {
             id: 1,
+            name: "TIAN HE",
+            photo: require("../assets/people/hetian.jpg"),
+            url: "http://www-users.cs.umn.edu/~tianhe/index.html",
+            desc:
+              "IEEE/ACM Fellow<br/>" +
+                    "Director, Smart Internet of Things Research Center, Southeast University<br/><br/>" +
+                    "Research Interests: Wireless Coexistence, Posture/Behavior Estimation, " +
+                    "Social Interaction Monitoring, " +
+                    "Large-Scale Intelligent Transportation Systems (road network efficiency and safety), " +
+                    "Rechargeable Sensor Systems/Battery Array Management/Safe Charging.<br/><br/>" +
+                    "Email: tianhe@seu.edu.cn"
+          },
+          {
+            id: 2,
             name: "SHUAI WANG",
             photo: require("../assets/people/wangshuai.jpg"),
             url: "https://scholar.google.com/citations?hl=zh-CN&user=gfDfZqAAAAAJ&view_op=list_works&sortby=pubdate",
             desc:
-              "Professor, School of Computer Science and Engineering, Southeast University<br/>Executive Director, SING(Southeast University Information and Network Group)" +
+              "Professor, School of Computer Science and Engineering, Southeast University<br/>Executive Director, Smart Internet of Things Research Center, Southeast University" +
                     "<br/><br/>Research Interests: Internet of Things, Data Analytics, " +
                     "Wireless Networks And Sensors.<br/><br/>" +
-                    "Email: shuaiwang@seu.edu.cn<br/>Phone Number: 17867966559"
+                    "Email: shuaiwang@seu.edu.cn"
+                    // "Email: shuaiwang@seu.edu.cn<br/>Phone Number: 17867966559"
           }
         ]
       }

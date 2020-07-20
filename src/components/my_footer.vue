@@ -1,6 +1,6 @@
 <template>
     <div class="my_footer" :class="isBottom? 'footer-fix' : ''">
-        <span>版权所有@ 东南大学智慧物联网研究中心(2019)</span>
+        <span>版权所有@ 东南大学智慧物联网研究中心(2020)</span>
     </div>
 </template>
 
