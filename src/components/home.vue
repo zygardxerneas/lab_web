@@ -15,10 +15,12 @@
 <!--    <hr align="center" width="100%" color="#409EFF" size="10" style="margin-top: 1rem" />-->
     <div class="introduction">
       <div class="title">实验室简介</div>
+<!--      <div class="title">INTRODUCTION</div>-->
       <div class="text" v-html="introduction_text"></div>
     </div>
     <div class="introduction">
       <div class="title">实验室新闻</div>
+<!--      <div class="title">NEWS</div>-->
       <div class="news" :style="isMobile? 'padding: 0.2rem 0.4rem': 'padding: 0.4rem 1rem'">
         <div v-for="item in news" :key="item" class="news-item" @click="to_news_item(item)">
           <el-row style="display: flex;align-items: center">
@@ -73,47 +75,66 @@ export default {
     this.introduction_text =
       "<ul>" +
         "<li>实验室研究方向主要包括：物联网，大数据分析，无线网络，移动通信技术。欢迎对物联网或大数据方向感兴趣的同学申请加入实验室团队。</li>" +
-        "<li>何田教授简介：ACM/IEEE Fellow，在顶级期刊和著名国际会议上发表300余篇文章（Google Scholar被引用次数超过22,000次，H-Index 65）。现任包括ACM/IEEE TON，IEEE TC, ACM TOSN在内的七个国际期刊的编委，获八项国际会议的最佳论文奖（包括业界顶会MobiCom，SenSys和ICDCS）。</li>" +
+        "<li>何田教授简介：ACM/IEEE Fellow，在顶级期刊和著名国际会议上发表300余篇文章（Google Scholar被引用次数超过25,000次，H-Index 73）。现任包括ACM/IEEE TON，IEEE TC, ACM TOSN在内的七个国际期刊的编委，获八项国际会议的最佳论文奖（包括业界顶会MobiCom，SenSys和ICDCS）。</li>" +
         "<li>王帅教授简介：毕业于美国明尼苏达大学计算机科学与工程系，在国内外期刊IEEE/ACM TON、TPDS、TOC、TOSN、TWC和会议MobiCom、WWW、UbiComp、INFOCOM、SenSys、ICNP、BIGDATA发表论文三十余篇。</li>";
     let url = window.location;
     this.news = [
-      {  title: ["1 paper is accepted by ", "WWW 2020", " about web usage representativeness modeling and correction based on diverse cellular networks."],
+        {  title: ["1 paper is accepted by ", "NSDI 2021", " about wireless Beacon system."],
+            isChangeTitle: [false, true, false],
+            time: "2020-08-30",
+            url: url.origin + "/news"
+        },
+        // {  title: ["1 paper is accepted by ", "ICNP 2020", " about ."],
+        //     isChangeTitle: [false, true, false],
+        //     time: "2020-07-25",
+        //     url: url.origin + "/news"
+        // },
+        // {  title: ["1 paper is accepted by ", "KDD 2020", " about order fulfillment cycle time estimation."],
+        //     isChangeTitle: [false, true, false],
+        //     time: "2020-07-07",
+        //     url: url.origin + "/news"
+        // },
+        {  title: ["1 paper is accepted by ", "MobiCom 2020", " about indoor localization with uncertain human participation."],
+            isChangeTitle: [false, true, false],
+            time: "2020-07-07",
+            url: url.origin + "/news"
+        }, {  title: ["1 paper is accepted by ", "WWW 2020", " about web usage representativeness modeling and correction based on diverse cellular networks."],
         isChangeTitle: [false, true, false],
         time: "2020-01-11",
         url: url.origin + "/news"
-      }, {
+        }, {
         title: ["3 papers are accepted by ", "UbiComp 2020", "."],
         isChangeTitle: [false, true, false],
         time: "2020-01-10",
         url: url.origin + "/news"
-      },
-      {
+        },
+        {
         title: ["1 paper is accepted by ", "TON", " about reliable cross-technology communication."],
         isChangeTitle: [false, true, false],
         time: "2019-12-28",
         url: url.origin + "/news"
-      },{
+        },{
         title: ["1 paper is accepted by ", "TITS", " about sensing human mobility via vehicular internet service."],
         isChangeTitle: [false, true, false],
         time: "2019-11-22",
         url: url.origin + "/news"
-      },{
+        },{
         title: ["1 paper is accepted by ", "UbiComp 2019", " about the impacts of anomalies on travel time of multiple transportation systems."],
         isChangeTitle: [false, true, false],
         time: "2019-09-11",
         url: url.origin + "/news"
-      },{
+        },{
         title: ["1 paper is accepted by ", "TMC",  " about bidirectional cross-technology communication."],
         isChangeTitle: [false, true, false],
         time: "2019-08-30",
         url: url.origin + "/news"
-      },
-      {
+        },
+        {
         title: ["1 paper is accepted by ", "WWW 2019",  " about bike sharing systems."],
         isChangeTitle: [false, true, false],
         time: "2019-05-13",
         url: url.origin + "/news"
-      }
+        }
     ];
   }
 };

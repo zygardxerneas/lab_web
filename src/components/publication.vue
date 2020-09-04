@@ -60,7 +60,8 @@
             return {
                 publications: [{
                     year: 2020,
-                    papers: [{
+                    papers: [
+                        {
                         source: "WWW, TaiPei, China, 2020",
                         title: "CellRep: Usage Representativeness Modeling and Correction Based on Multiple City-Scale Cellular Networks",
                         author: ["Zhihan Fang", "Guang Wang", "Shuai Wang", "Chaoji Zuo", "Fan Zhang", "Desheng Zhang"],
