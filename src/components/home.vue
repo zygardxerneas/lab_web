@@ -79,21 +79,25 @@ export default {
         "<li>王帅教授简介：毕业于美国明尼苏达大学计算机科学与工程系，在国内外期刊IEEE/ACM TON、TPDS、TOC、TOSN、TWC和会议MobiCom、WWW、UbiComp、INFOCOM、SenSys、ICNP、BIGDATA发表论文三十余篇。</li>";
     let url = window.location;
     this.news = [
+        {  title: ["1 paper is accepted by ", "ICDE 2020", " about Fairness-Aware Vehicle Displacement."],
+            isChangeTitle: [false, true, false],
+            time: "2020-10-06",
+            url: url.origin + "/news"
+        },{  title: ["1 paper is accepted by ", "ICNP 2020", " about LoRa transmissions."],
+            isChangeTitle: [false, true, false],
+            time: "2020-09-08",
+            url: url.origin + "/news"
+        },
+        {  title: ["1 paper is accepted by ", "UbiComp-ISWC 2020", " about contract parking sharing system."],
+            isChangeTitle: [false, true, false],
+            time: "2020-09-08",
+            url: url.origin + "/news"
+        },
         {  title: ["1 paper is accepted by ", "NSDI 2021", " about wireless Beacon system."],
             isChangeTitle: [false, true, false],
             time: "2020-08-30",
             url: url.origin + "/news"
         },
-        // {  title: ["1 paper is accepted by ", "ICNP 2020", " about ."],
-        //     isChangeTitle: [false, true, false],
-        //     time: "2020-07-25",
-        //     url: url.origin + "/news"
-        // },
-        // {  title: ["1 paper is accepted by ", "KDD 2020", " about order fulfillment cycle time estimation."],
-        //     isChangeTitle: [false, true, false],
-        //     time: "2020-07-07",
-        //     url: url.origin + "/news"
-        // },
         {  title: ["1 paper is accepted by ", "MobiCom 2020", " about indoor localization with uncertain human participation."],
             isChangeTitle: [false, true, false],
             time: "2020-07-07",

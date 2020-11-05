@@ -60,8 +60,19 @@
             return {
                 publications: [{
                     year: 2020,
-                    papers: [
-                        {
+                    papers: [{
+                        source: "ICDE, Dallas, Texas, USA, 2020.",
+                        title: " Data-Driven Fairness-Aware Vehicle Displacement for Large-Scale Electric Taxi Fleets",
+                        author: ["Guang Wang", "Shuxin Zhong", "Shuai Wang", "Fei Miao", "Zheng Dong", "Desheng Zhang"],
+                    },{
+                        source: "ICNP, Madrid, Spain, 2020",
+                        title: " SCLoRa: Leveraging Multi-Dimesionality in Decoding Collided LoRa Transmissions",
+                        author: ["Bin Hu", "Zhimeng Yin", "Shuai Wang", "Sh. Wang", "Zhuqing Xu", "Tian He"],
+                    },{
+                        source: "UbiComp-ISWC, Cancún, México, 2020",
+                        title: "SParking: A Win-Win Data-Driven Contract Parking Sharing System",
+                        author: ["Xin Zhu", "Shuai Wang", "Baoshen Guo", "Taiwei Ling", "Ziyi Zhou", "Lai Tu", "Tian He"],
+                    },{
                         source: "WWW, TaiPei, China, 2020",
                         title: "CellRep: Usage Representativeness Modeling and Correction Based on Multiple City-Scale Cellular Networks",
                         author: ["Zhihan Fang", "Guang Wang", "Shuai Wang", "Chaoji Zuo", "Fan Zhang", "Desheng Zhang"],

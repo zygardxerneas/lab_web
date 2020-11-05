@@ -46,6 +46,24 @@
                   </el-row>
                 </el-card>
               </el-col>
+
+              <el-col :span=24 class="item">
+                <el-card shadow="hover" @click="goToUrl(item.data[0].url)">
+                  <el-row>
+                    <el-col :span=6>
+                      <img  @click="goToUrl(item.data[2].url)" :src="item.data[2].photo" alt="picture missed" class="item-pic" />
+                    </el-col>
+                    <el-col :span=18 offset=0 class="item-desc">
+                      <el-card style="height:4.5rem">
+                        <div slot="header">
+                          <b style="font-size:19px">{{item.data[2].name}}</b>
+                        </div>
+                        <div style="font-size:15px;" v-html="item.data[2].desc"></div>
+                      </el-card>
+                    </el-col>
+                  </el-row>
+                </el-card>
+              </el-col>
           </el-row>
         </div>
       </div>
@@ -166,6 +184,16 @@ export default {
                     "Wireless Networks And Sensors.<br/><br/>" +
                     "Email: shuaiwang@seu.edu.cn"
                     // "Email: shuaiwang@seu.edu.cn<br/>Phone Number: 17867966559"
+          },
+          {
+            id: 3,
+            name: "WEIWEI CHEN",
+            photo: require("../assets/people/chenweiwei.jpg"),
+            url: "",
+            desc:
+                    "Professor, School of Computer Science and Engineering, Southeast University" +
+                    "<br/><br/>Research Interests: Internet of things, Wireless Communications, Mobile Edge Computing<br/><br/>" +
+                    "Email: chen_weiwei@seu.edu.cn"
           }
         ]
       }
