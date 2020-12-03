@@ -191,7 +191,7 @@ export default {
             photo: require("../assets/people/chenweiwei.jpg"),
             url: "",
             desc:
-                    "Professor, School of Computer Science and Engineering, Southeast University" +
+                    "Associate Professor, School of Computer Science and Engineering, Southeast University" +
                     "<br/><br/>Research Interests: Internet of things, Wireless Communications, Mobile Edge Computing<br/><br/>" +
                     "Email: chen_weiwei@seu.edu.cn"
           }

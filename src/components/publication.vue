@@ -59,8 +59,19 @@
         data() {
             return {
                 publications: [{
+                    year: 2021,
+                    papers: [{
+                        source: "UbiComp, 2021",
+                        title: " Understanding User Behavior in Car Sharing Services Through The Lens of Mobility: Mixing Qualitative and Quantitative Studies",
+                        author: ["Guang Wang", "Harsh Rajkumar Vaish", "Huijun Sun", "Jianjun Wu", "Shuai Wang", "Desheng Zhang"],
+                    }]
+                },{
                     year: 2020,
                     papers: [{
+                        source: "ACM Transactions on Intelligent Systems and Technology (TIST), 2020.",
+                        title: " Pricing-aware Real-time Charging Scheduling and Charging Station Expansion for Large-scale Electric Buses",
+                        author: ["Guang Wang", "Zhihan Fang", "Xiaoyang Xie", "Shuai Wang", "Huijun Sun", "Fan Zhang", "Yunhuai Liu", "Desheng Zhang"],
+                    },{
                         source: "ICDE, Dallas, Texas, USA, 2020.",
                         title: " Data-Driven Fairness-Aware Vehicle Displacement for Large-Scale Electric Taxi Fleets",
                         author: ["Guang Wang", "Shuxin Zhong", "Shuai Wang", "Fei Miao", "Zheng Dong", "Desheng Zhang"],

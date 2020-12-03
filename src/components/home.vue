@@ -79,7 +79,15 @@ export default {
         "<li>王帅教授简介：毕业于美国明尼苏达大学计算机科学与工程系，在国内外期刊IEEE/ACM TON、TPDS、TOC、TOSN、TWC和会议MobiCom、WWW、UbiComp、INFOCOM、SenSys、ICNP、BIGDATA发表论文三十余篇。</li>";
     let url = window.location;
     this.news = [
-        {  title: ["1 paper is accepted by ", "ICDE 2020", " about Fairness-Aware Vehicle Displacement."],
+        {  title: ["1 paper is accepted by ", "UbiComp 2021", " about Understanding User Behavior in Car Sharing Services."],
+            isChangeTitle: [false, true, false],
+            time: "2020-12-02",
+            url: url.origin + "/news"
+        },{  title: ["1 paper is accepted by ", "TIST", " about Pricing-aware Real-time Charging Scheduling and Charging Station Expansion."],
+            isChangeTitle: [false, true, false],
+            time: "2020-12-02",
+            url: url.origin + "/news"
+        },{  title: ["1 paper is accepted by ", "ICDE 2020", " about Fairness-Aware Vehicle Displacement."],
             isChangeTitle: [false, true, false],
             time: "2020-10-06",
             url: url.origin + "/news"
