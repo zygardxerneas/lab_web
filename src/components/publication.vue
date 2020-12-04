@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
     <div class="publications">
         <!-- <el-backtop></el-backtop> -->
@@ -20,23 +21,27 @@
 <!--                    </TimelineItem>-->
 <!--                </Timeline>-->
                 <div class="my-time-line" :style="isMobile? 'padding: 0': ''">
-                    <div v-for="item in publications" :key="item.year" :id="item.year">
+                    <div v-for="(item, ii) in publications" :key="item.year" :id="item.year">
                         <div class="time-title">{{item.year}}</div>
                         <div class="paper-box">
                             <div v-for="(paper, index) in item.papers" :key="index" class="per-paper">
-                                <span><strong>{{index+1}}.&nbsp;</strong></span>
-                                <span v-for="(a, ai) in paper.author" :key="ai">
-                                    <div :style="isLab(a)? 'text-decoration: underline;': ''" style="display: inline-block">
-                                        {{a}}
+                                <div style="width: 100%" class="box">
+                                    <div style="display: inline-block;text-align: right" :style="isMobile? 'width: 10%;': 'width: 5%'"><strong>{{index+pub_index[ii]}}.&nbsp;&nbsp;</strong></div>
+                                    <div style="display: inline-block;" :style="isMobile? 'width: 90%;': 'width: 95%'">
+                                    <span v-for="(a, ai) in paper.author" :key="ai">
+                                        <div :style="isLab(a) & ai==0? 'text-decoration: underline;': ''" style="display: inline-block">
+                                            {{a}}
+                                        </div>
+                                        <span v-if="ai < paper.author.length-2">,&nbsp;</span>
+                                        <span v-else-if="ai == paper.author.length-2">&nbsp;and&nbsp;</span>
+                                    </span>
+                                        <span>.&nbsp;</span>
+                                        <span><strong>{{paper.title}}</strong></span>
+                                        <span>.&nbsp;</span>
+                                        <span><i>{{paper.source}}</i></span>
+                                        <span>.&nbsp;</span>
                                     </div>
-                                    <span v-if="ai < paper.author.length-2">,&nbsp;</span>
-                                    <span v-else-if="ai == paper.author.length-2">&nbsp;and&nbsp;</span>
-                                </span>
-                                <span>.&nbsp;</span>
-                                <span><strong>{{paper.title}}</strong></span>
-                                <span>.&nbsp;</span>
-                                <span><i>{{paper.source}}</i></span>
-                                <span>.&nbsp;</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -58,6 +63,7 @@
         props: ["isMobile"],
         data() {
             return {
+                pub_index: [],
                 publications: [{
                     year: 2021,
                     papers: [{
@@ -215,7 +221,6 @@
                 },
                 ],
                 labPeople: ["Shuai Wang", "S. Wang"]
-
             }
         },
         methods: {
@@ -227,8 +232,13 @@
             }
         },
         mounted() {
-
-        }
+            let ind = 1;
+            // debugger;
+            for (let it of this.publications){
+                this.pub_index.push(ind);
+                ind += it.papers.length;
+            }
+        },
     }
 </script>
 
@@ -236,6 +246,11 @@
     .publications{
         padding-left: 10%;
         padding-right: 10%;
+        .box{
+            display: -webkit-flex; /* Safari */
+            display: flex;
+            align-items: flex-start;
+        }
         .introduction {
             margin-top: 0.1rem;
             .title {
